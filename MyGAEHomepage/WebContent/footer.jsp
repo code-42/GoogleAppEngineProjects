@@ -4,18 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>My GAE Homepage</title>
+<title>Insert title here</title>
 </head>
 <body>
-
-<jsp:include page="header.html" />
+this is footer.jsp
 <br>
-Hello form /WebContent/index.jsp
-<br>
-
-<br>User-Agent: 
-<%= request.getHeader("User-Agent") %>
-<br><br>
-<jsp:include page="footer.jsp" />
+The time on the server is <%= new java.util.Date() %>
 </body>
 </html>
