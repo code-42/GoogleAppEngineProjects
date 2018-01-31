@@ -4,13 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <title>My GAE Homepage</title>
 </head>
 <body>
 
 <jsp:include page="header.html" />
 <br>
-Hello form /WebContent/index.jsp
+Hello from /WebContent/index.jsp
 <br>
 
 <br>User-Agent: 
