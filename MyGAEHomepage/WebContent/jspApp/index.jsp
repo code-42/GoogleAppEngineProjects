@@ -17,6 +17,8 @@ Hello from /WebContent/index.jsp
 <br>User-Agent: 
 <%= request.getHeader("User-Agent") %>
 <br><br>
+
+<br>
 <jsp:include page="footer.jsp" />
 </body>
 </html>
