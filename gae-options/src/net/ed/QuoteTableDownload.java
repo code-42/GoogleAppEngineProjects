@@ -73,10 +73,10 @@ public class QuoteTableDownload {
         filename = "/Users/melocal/Downloads/quotedata.dat";
 
         // now read the quotedata.dat file and output to console
-//        ReadQuoteData readme = new ReadQuoteData();
-////        System.out.println(readme);
-//        int lineCount = readme.countLines(filename);
-//        System.out.println(lineCount);
+        ReadQuoteData readme = new ReadQuoteData();
+//        System.out.println(readme);
+        int lineCount = readme.countLines(filename);
+        System.out.println(lineCount);
     }
 
 
