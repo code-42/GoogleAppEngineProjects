@@ -47,7 +47,7 @@ public class QuoteTableDownload {
 
         // enter the ticker symbol
         String txtTickerID = "ContentTop_C005_txtTicker";
-        String ticker = "TWTR";
+        String ticker = "gm";
         driver.findElement(By.id(txtTickerID)).sendKeys(ticker);
         System.out.println("Entered ticker symbol " + ticker);
 
@@ -73,8 +73,12 @@ public class QuoteTableDownload {
         }
         
         // move and rename quoteFile
-        quoteFile = "/Users/melocal/Downloads/quotedata.dat";
-        RenameFile moveMe = new RenameFile(quoteFile);
+        try {
+	        	quoteFile = "/Users/melocal/Downloads/quotedata.dat";
+	        	MoveAndRenameFile moveMe = new MoveAndRenameFile(quoteFile);
+        } catch (IOException e) {
+        		e.printStackTrace();
+        }
         
         // readFile works
 //        try {
