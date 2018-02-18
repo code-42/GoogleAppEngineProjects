@@ -47,7 +47,7 @@ public class QuoteTableDownload {
 
         // enter the ticker symbol
         String txtTickerID = "ContentTop_C005_txtTicker";
-        String ticker = "TSLA";
+        String ticker = "TWTR";
         driver.findElement(By.id(txtTickerID)).sendKeys(ticker);
         System.out.println("Entered ticker symbol " + ticker);
 
@@ -72,18 +72,25 @@ public class QuoteTableDownload {
             e.printStackTrace();
         }
         
-        try {
-            quoteFile = "/Users/melocal/Downloads/quotedata.dat";
-            ReadQuoteData readme = new ReadQuoteData();
-            int count = readme.countLines(quoteFile);
-            System.out.println(count);
-            
-            readme.readFile(quoteFile);
-        }
-        catch (IOException e) {
-        	System.out.print("err:");
-        		e.printStackTrace();
-        }
+        // move and rename quoteFile
+        quoteFile = "/Users/melocal/Downloads/quotedata.dat";
+        RenameFile moveMe = new RenameFile(quoteFile);
+        
+        // readFile works
+//        try {
+//            quoteFile = "/Users/melocal/Downloads/quotedata.dat";
+//            ReadQuoteData readme = new ReadQuoteData();
+//            int count = readme.countLines(quoteFile);
+//            System.out.println(count);
+//            
+//            readme.readFile(quoteFile);
+//        }
+//        catch (IOException e) {
+//        	System.out.print("err:");
+//        		e.printStackTrace();
+//        }
+        
+        
 
         // sleep for 5 second
         try {

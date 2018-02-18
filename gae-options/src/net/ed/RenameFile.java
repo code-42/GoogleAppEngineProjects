@@ -10,24 +10,23 @@ import java.text.SimpleDateFormat;
 
 public class RenameFile {
 
-	private static File file;
+	private File file;
 
-    /**
-	 * @return the file
-	 */
-	public File getFile() {
-		return file;
+	// constructor
+    public RenameFile(File file) {
+		this.file = file;
 	}
 
-    public RenameFile (File file) throws IOException{
+    
+	public RenameFile (String quoteFile) throws IOException{
     	
-    		this.file = file;    		
-    		System.out.println(this.file.getCanonicalFile());
+    		File aFile = new File(quoteFile);
+    		
+    		System.out.println(aFile.getCanonicalFile());
 	    		
   		String newFileName = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date()) + ".csv";
     		
-  		
-  		File oldFile = file;
+  		File oldFile = aFile;
   		System.out.println("35. " + oldFile.getAbsolutePath());
   		File newFile = new File(newFileName);
   		System.out.println("37. " + newFile.getAbsolutePath());
