@@ -11,12 +11,17 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.io.*;
+import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class QuoteTableDownload {
 
-    public static void main(String[] args) throws IOException {
+    private static String quoteFile;
+
+	public static void main(String[] args) throws IOException {
 
         String key = "webdriver.chrome.driver";
         String value = "/Users/melocal/Applications/lib/chromedriver";
@@ -42,9 +47,9 @@ public class QuoteTableDownload {
 
         // enter the ticker symbol
         String txtTickerID = "ContentTop_C005_txtTicker";
-        String ticker = "MULE";
+        String ticker = "TSLA";
         driver.findElement(By.id(txtTickerID)).sendKeys(ticker);
-        System.out.println("Entered ticker symbol");
+        System.out.println("Entered ticker symbol " + ticker);
 
         // sleep for 1 second
         try {
@@ -58,27 +63,38 @@ public class QuoteTableDownload {
         String downloadButtonXpath = "ContentTop_C005_cmdSubmit";
         driver.findElement(By.id(downloadButtonXpath)).sendKeys(Keys.ENTER);
         System.out.println("pressed ENTER key");
+        
+        // sleep for 7 second
+        try {
+            Thread.sleep(7000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
+        try {
+            quoteFile = "/Users/melocal/Downloads/quotedata.dat";
+            ReadQuoteData readme = new ReadQuoteData();
+            int count = readme.countLines(quoteFile);
+            System.out.println(count);
+            
+            readme.readFile(quoteFile);
+        }
+        catch (IOException e) {
+        	System.out.print("err:");
+        		e.printStackTrace();
+        }
 
-        // sleep for 61 seconds then loop
-//		try {
-//			Thread.sleep(61000);
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-
-
-
-        String filename;
-        filename = "/Users/melocal/Downloads/quotedata.dat";
-
-        // now read the quotedata.dat file and output to console
-        ReadQuoteData readme = new ReadQuoteData();
-//        System.out.println(readme);
-        int lineCount = readme.countLines(filename);
-        System.out.println(lineCount);
+        // sleep for 5 second
+        try {
+            Thread.sleep(6000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
+        driver.quit();
     }
-
 
 }
 
