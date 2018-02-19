@@ -22,7 +22,14 @@ public class QuoteTableDownload {
     private static String quoteFile;
 
 	public static void main(String[] args) throws IOException {
+		
+		getData(args[0]);
+	}
+	
 
+	public static boolean getData(String ticker) {
+//		String symbol =  ticker;
+		
         String key = "webdriver.chrome.driver";
         String value = "/Users/melocal/Applications/lib/chromedriver";
         System.setProperty(key, value);
@@ -47,9 +54,9 @@ public class QuoteTableDownload {
 
         // enter the ticker symbol
         String txtTickerID = "ContentTop_C005_txtTicker";
-        String ticker = "gm";
-        driver.findElement(By.id(txtTickerID)).sendKeys(ticker);
-        System.out.println("Entered ticker symbol " + ticker);
+        String symbol = ticker;
+        driver.findElement(By.id(txtTickerID)).sendKeys(symbol);
+        System.out.println("Entered ticker symbol " + ticker.toUpperCase());
 
         // sleep for 1 second
         try {
@@ -71,28 +78,22 @@ public class QuoteTableDownload {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        
-        // move and rename quoteFile
-        try {
-	        	quoteFile = "/Users/melocal/Downloads/quotedata.dat";
-	        	MoveAndRenameFile moveMe = new MoveAndRenameFile(quoteFile);
-        } catch (IOException e) {
-        		e.printStackTrace();
-        }
+
         
         // readFile works
-//        try {
-//            quoteFile = "/Users/melocal/Downloads/quotedata.dat";
-//            ReadQuoteData readme = new ReadQuoteData();
-//            int count = readme.countLines(quoteFile);
-//            System.out.println(count);
-//            
-//            readme.readFile(quoteFile);
-//        }
-//        catch (IOException e) {
-//        	System.out.print("err:");
-//        		e.printStackTrace();
-//        }
+        // print the first 5 lines in the quote file
+        try {
+            quoteFile = "/Users/melocal/Downloads/quotedata.dat";
+            ReadQuoteData readme = new ReadQuoteData();
+            int count = readme.countLines(quoteFile);
+            System.out.println(count);
+            
+            readme.readFile(quoteFile);
+        }
+        catch (IOException e) {
+        	System.out.print("err:");
+        		e.printStackTrace();
+        }
         
         
 
@@ -104,7 +105,17 @@ public class QuoteTableDownload {
             e.printStackTrace();
         }
         
+        
+        // move and rename quoteFile
+        try {
+	        	quoteFile = "/Users/melocal/Downloads/quotedata.dat";
+	        	MoveAndRenameFile moveMe = new MoveAndRenameFile(quoteFile);
+        } catch (IOException e) {
+        		e.printStackTrace();
+        }
+        
         driver.quit();
+        return true;
     }
 
 }
