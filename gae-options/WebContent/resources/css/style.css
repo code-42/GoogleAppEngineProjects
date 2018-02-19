@@ -1,0 +1,184 @@
+body{
+    /*width: 80%;*/
+    text-align: center;
+    padding: 51px;
+    background-color: #e3deee;
+    /*background-color: green;*/
+}
+
+article{
+    text-align: left;
+    max-width: 80%;
+}
+
+img{
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /*border: 1px solid #777;*/
+}
+
+#logos{
+  border: 1px solid #777;
+}
+
+.img-circle{
+  width:140px;
+  height:auto;
+}
+
+.featurette{
+  text-align: left;
+}
+.featurette-image{
+    width:100%;
+}
+.featurette-heading{
+    width:100%;
+    font-size: x-large;
+    text-align: left;
+}
+
+#careerdevs_featurette{
+  text-align: right;
+}
+
+#NASDAQapp{
+    /*width: 100%;*/
+    padding-left: 20px;
+}
+
+#NASDAQapp_img{
+  width: 100%;
+}
+
+#json_file{
+  width: 100%;
+}
+
+#how_it_works, #project_definition{
+  width: 100%;
+  word-wrap: break-word;
+}
+
+#tribute{
+  width:100%;
+}
+
+#old_next_sticker{
+  width:100%;
+}
+
+footer{
+    text-align: center;
+}
+
+#gitthis{
+  font-size:30px;
+}
+#submit{
+  text-align: center;
+}
+#emailform{
+  margin: 0 auto;
+  text-align: center;
+}
+#sayhi{
+  background-color: #E2E2E2;
+}
+#email{
+  text-align: center;
+  background-color: #D7FEBD
+}
+.carousel-control, .glyphicon{
+    background-color: #e3dee5 !important;
+    color: white;
+    width: 0%;
+    /*opacity: 1 !important;*/
+}
+
+.carousel-control.left{
+  margin-left: 25px;
+}
+
+.carousel-control.right{
+  margin-right: 25px;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100vw;
+}
+
+/* NeXT LOGO*/
+/* COMMENTED OUT BECAUSE OF POOR CONTRAST SO NOT USED ON THIS PAGE*/
+/*.N{*/
+/*  color: red;*/
+/*}*/
+/*.e{*/
+/*  color: yellow;*/
+/*}*/
+/*.X{*/
+/*  color: green;*/
+/*}*/
+/*.T{*/
+/*  color: pink;*/
+/*}*/
+/* END NeXT LOGO*/
+
+/*  begin of email drop-down */
+/* https://bootsnipp.com/snippets/featured/fancy-navbar-login-sign-in-form */
+#login-dp{
+  min-width: 250px;
+  padding: 14px 14px 0;
+  overflow:hidden;
+  background-color:rgba(255,255,255,.8);
+}
+#login-dp .help-block{
+    font-size:12px    
+}
+#login-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+#login-dp .social-buttons{
+    margin:12px 0    
+}
+#login-dp .social-buttons a{
+    width: 49%;
+}
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+.btn-fb{
+    color: #fff;
+    background-color:#3b5998;
+}
+.btn-fb:hover{
+    color: #fff;
+    background-color:#496ebc 
+}
+.btn-tw{
+    color: #fff;
+    background-color:#55acee;
+}
+.btn-tw:hover{
+    color: #fff;
+    background-color:#59b5fa;
+}
+@media(max-width:768px){
+    #login-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+}
+/*  end of email drop-down */
