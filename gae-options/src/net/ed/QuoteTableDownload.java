@@ -22,9 +22,9 @@ public class QuoteTableDownload {
     private static String quoteFile;
 
 	public static void main(String[] args) throws IOException {
-
+		
         String key = "webdriver.chrome.driver";
-        String value = "/Users/melocal/Applications/lib/chromedriver";
+        String value = "/home/melocal/Applications/libs/chromedriver";
         System.setProperty(key, value);
 
         WebDriver driver = new ChromeDriver(); // launch chrome
@@ -47,7 +47,7 @@ public class QuoteTableDownload {
 
         // enter the ticker symbol
         String txtTickerID = "ContentTop_C005_txtTicker";
-        String ticker = "gm";
+        String ticker = "baba";
         driver.findElement(By.id(txtTickerID)).sendKeys(ticker);
         System.out.println("Entered ticker symbol " + ticker);
 
@@ -71,29 +71,30 @@ public class QuoteTableDownload {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
+        
+        // readFile works
+        try {
+            quoteFile = "/home/melocal/Downloads/quotedata.dat";
+            ReadQuoteData readme = new ReadQuoteData();
+            int count = readme.countLines(quoteFile);
+            System.out.println(count);
+            
+            readme.readFile(quoteFile);
+        }
+        catch (IOException e) {
+        	System.out.print("err:");
+        		e.printStackTrace();
+        }
+        
         
         // move and rename quoteFile
         try {
-	        	quoteFile = "/Users/melocal/Downloads/quotedata.dat";
+	        	quoteFile = "/home/melocal/Downloads/quotedata.dat";
 	        	MoveAndRenameFile moveMe = new MoveAndRenameFile(quoteFile);
         } catch (IOException e) {
         		e.printStackTrace();
         }
-        
-        // readFile works
-//        try {
-//            quoteFile = "/Users/melocal/Downloads/quotedata.dat";
-//            ReadQuoteData readme = new ReadQuoteData();
-//            int count = readme.countLines(quoteFile);
-//            System.out.println(count);
-//            
-//            readme.readFile(quoteFile);
-//        }
-//        catch (IOException e) {
-//        	System.out.print("err:");
-//        		e.printStackTrace();
-//        }
-        
         
 
         // sleep for 5 second

@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class ReadQuoteData {
 	
-	private static String quoteFile = "/Users/melocal/Downloads/quotedata.dat";
+	private static String quoteFile = "/home/melocal/Downloads/quotedata.dat";
 		
     // constructor
     public ReadQuoteData() {}
