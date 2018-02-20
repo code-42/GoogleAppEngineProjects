@@ -15,6 +15,12 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+//Imports the Google Cloud client library
+import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.Key;
+
 /**
  * Servlet implementation class WebScraper2
  */
@@ -30,9 +36,28 @@ public class CoinScraper extends HttpServlet {
 		
 		response.setContentType("text/plain");
 		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
 		PrintWriter writer = response.getWriter();
 		writer.println("\nThis data shamelessly scraped from CoinMarketCap.com");
+		
+//	    // Instantiates a client
+//	    Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
+//
+//	    // The kind for the new entity
+//	    String kind = "Task";
+//	    // The name/ID for the new entity
+//	    String name = "sampletask1";
+//	    // The Cloud Datastore key for the new entity
+//	    Key taskKey = datastore.newKeyFactory().setKind(kind).newKey(name);
+//
+//	    // Prepares the new entity
+//	    Entity task = Entity.newBuilder(taskKey)
+//	        .set("description", "Buy milk")
+//	        .build();
+//
+//	    // Saves the entity
+//	    datastore.put(task);
+
 
         String url = "https://coinmarketcap.com/all/views/all/";
         String query = "";
@@ -56,10 +81,8 @@ public class CoinScraper extends HttpServlet {
 
             // print td for each row
             for (int c = 0; c < cols.size(); c++) {
-//            		writer.print(cols.get(c).text() + ",");
+            		writer.print(cols.get(c).text() + ",");
 //                System.out.print(cols.get(c).text() + "\t");
-	        		String datarow = (cols.get(c).text() + ",");
-	        		writer.print(datarow);
             }
             // empty println is same as \n
             System.out.println();

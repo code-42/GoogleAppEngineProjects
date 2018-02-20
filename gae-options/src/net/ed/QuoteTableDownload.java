@@ -23,16 +23,23 @@ public class QuoteTableDownload {
 
 	public static void main(String[] args) throws IOException {
 		
+//<<<<<<< HEAD
 //		getData(ticker);
-		System.out.println("hello from main()");
+//		System.out.println("hello from main()");
+//=======
+//<<<<<<< HEAD
+//=======
+		getData(args[0]);
+//>>>>>>> 0a61601e783ba3470ccd72d62921896023eb0123
 	}
 	
 
 	public static boolean getData(String ticker) {
 //		String symbol =  ticker;
 		
+//>>>>>>> dc66ddf98ffa0a7ba3af3fd8027df102f28cb725
         String key = "webdriver.chrome.driver";
-        String value = "/Users/melocal/Applications/lib/chromedriver";
+        String value = "/home/melocal/Applications/libs/chromedriver";
         System.setProperty(key, value);
 
         WebDriver driver = new ChromeDriver(); // launch chrome
@@ -55,8 +62,19 @@ public class QuoteTableDownload {
 
         // enter the ticker symbol
         String txtTickerID = "ContentTop_C005_txtTicker";
+//<<<<<<< HEAD
+//        driver.findElement(By.id(txtTickerID)).sendKeys(ticker);
+//=======
+//<<<<<<< HEAD
+//        String ticker = "baba";
         driver.findElement(By.id(txtTickerID)).sendKeys(ticker);
-        System.out.println("Entered ticker symbol " + ticker.toUpperCase());
+        System.out.println("Entered ticker symbol " + ticker);
+//=======
+//        String symbol = ticker;
+//        driver.findElement(By.id(txtTickerID)).sendKeys(symbol);
+//>>>>>>> 0a61601e783ba3470ccd72d62921896023eb0123
+//        System.out.println("Entered ticker symbol " + ticker.toUpperCase());
+//>>>>>>> dc66ddf98ffa0a7ba3af3fd8027df102f28cb725
 
         // sleep for 1 second
         try {
@@ -79,11 +97,11 @@ public class QuoteTableDownload {
             e.printStackTrace();
         }
 
+//<<<<<<< HEAD
         
         // readFile works
-        // print the first 5 lines in the quote file
         try {
-            quoteFile = "/Users/melocal/Downloads/quotedata.dat";
+            quoteFile = "/home/melocal/Downloads/quotedata.dat";
             ReadQuoteData readme = new ReadQuoteData();
             int count = readme.countLines(quoteFile);
             System.out.println(count);
@@ -95,7 +113,34 @@ public class QuoteTableDownload {
         		e.printStackTrace();
         }
         
+//=======
+//>>>>>>> dc66ddf98ffa0a7ba3af3fd8027df102f28cb725
+//        
+        // readFile works
+        // print the first 5 lines in the quote file
+//        try {
+//<<<<<<< HEAD
+//	        	quoteFile = "/home/melocal/Downloads/quotedata.dat";
+//	        	MoveAndRenameFile moveMe = new MoveAndRenameFile(quoteFile);
+//        } catch (IOException e) {
+//        		e.printStackTrace();
+//        }
+//        
+//=======
+//            quoteFile = "/Users/melocal/Downloads/quotedata.dat";
+//            ReadQuoteData readme = new ReadQuoteData();
+//            int count = readme.countLines(quoteFile);
+//            System.out.println(count);
+//            
+//            readme.readFile(quoteFile);
+//        }
+//        catch (IOException e) {
+//        	System.out.print("err:");
+//        		e.printStackTrace();
+//        }
         
+        
+//>>>>>>> dc66ddf98ffa0a7ba3af3fd8027df102f28cb725
 
         // sleep for 5 second
         try {

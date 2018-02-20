@@ -30,6 +30,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+
 /**
  * Servlet implementation class CoinScraper
  */
@@ -58,9 +59,6 @@ public class CoinScraper extends HttpServlet {
 	    // Instantiates a client
 	    Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
 
-        String url = "https://coinmarketcap.com/all/views/all/";
-        String query = "";
-        
         // set up variables
         String rank = "";
         String name = "";
@@ -73,8 +71,12 @@ public class CoinScraper extends HttpServlet {
         String ch24h = "";
         String ch7d = "";
 
+        // Setup for Jsoup
+        String url = "https://coinmarketcap.com/all/views/all/";
+        String query1 = "";
+        
         // Downloads the html from coinmarketcap.com and parses it
-        final Document doc = Jsoup.connect(url + URLEncoder.encode(query,"UTF-8"))
+        final Document doc = Jsoup.connect(url + URLEncoder.encode(query1,"UTF-8"))
                 .timeout(20000)
                 .maxBodySize(0)
                 .get();
@@ -143,10 +145,12 @@ public class CoinScraper extends HttpServlet {
 			printRow += " " + ch24h;
 			printRow += " " + ch7d;
 			
-			writer.print(printRow);
-			writer.println("");
+//			writer.print(printRow);
+//			writer.println("");
+			
+//			var coins = query.filter('Kind', 'Coin').filter('symbol = ', 'BTC');
            		 
-        		// The Cloud Datastore key for the new entity
+//        		// The Cloud Datastore key for the new entity
         		Key coinKey = datastore.allocateId(keyFactory.newKey());
        		
         		// Prepares the new entity
@@ -167,9 +171,24 @@ public class CoinScraper extends HttpServlet {
        		 // Saves the entity
        		 datastore.put(coin);
        		 
-       		 // now done with this row, go get another		            		 
+       		 // now done with this row, go get another
+
         }
+        
+        // print top 10 coins when finished
+        // need to query datastore
+//        Query query = new Query("Message");
+        
         // clean up after yourself
         writer.close();
+        
+        // https://stackoverflow.com/questions/20181778/how-to-delete-an-entity-from-appengine-datastore-that-matching-a-query
+        // Unfortunately the Java API doesn't provide delete all functionality. 
+        // You need to iterate the results of the query and than delete all the entities.
+
+
 	}
+
+	
+
 }

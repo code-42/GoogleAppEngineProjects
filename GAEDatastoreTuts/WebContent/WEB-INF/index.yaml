@@ -1,0 +1,8 @@
+indexes:
+
+- kind: Coin
+  ancestor: no
+  properties:
+  - name: symbol
+  - name: Name/ID
+    direction: asc
