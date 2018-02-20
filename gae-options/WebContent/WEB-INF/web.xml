@@ -11,7 +11,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>QuoteTableServlet</servlet-name>
-		<url-pattern>/QuoteTableServlet</url-pattern>
+		<url-pattern>/QuoteTable</url-pattern>
 	</servlet-mapping>
 
 </web-app>

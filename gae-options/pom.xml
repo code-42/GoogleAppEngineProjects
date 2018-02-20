@@ -1,7 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>gae-options</groupId>
-  <artifactId>gae-options</artifactId>
+  <artifactId>net.ed</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <dependencies>
@@ -26,7 +27,17 @@
          <artifactId>jackson-databind</artifactId>
          <version>2.9.3</version>
      </dependency>
-  </dependencies>
+  <dependency>
+<groupId>com.google.endpoints</groupId>
+<artifactId>endpoints-framework</artifactId>
+<version>2.0.12</version>
+</dependency>
+<dependency>
+<groupId>com.google.cloud</groupId>
+<artifactId>google-cloud-resourcemanager</artifactId>
+<version>0.34.0-alpha</version>
+</dependency>
+</dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>

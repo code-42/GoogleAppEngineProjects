@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class QuoteTableServlet
  */
-@WebServlet("/QuoteTableServlet")
+@WebServlet("/QuoteTable")
 public class QuoteTableServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -20,7 +20,7 @@ public class QuoteTableServlet extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public QuoteTableServlet() {
-        super();
+//        super();
         // TODO Auto-generated constructor stub
     }
 
@@ -39,10 +39,11 @@ public class QuoteTableServlet extends HttpServlet {
 		
 		// step 3: generate HTML content
 		// get the parameter from the form
-//		String ticker = request.getParameter("ticker");
+		String ticker = request.getParameter("ticker");
 		out.println("<html><body>");
-		out.print("43. " + request.getParameter("ticker"));
-//		out.print(QuoteTableDownload.getData(ticker));
+//		out.print("44. " + request.getParameter("ticker"));
+//		out.print("43. you entered symbol ");
+		out.print(QuoteTableDownload.getData(ticker));
 		out.println("</body></html>");
 //		QuoteTableDownload.getData(ticker);
 		

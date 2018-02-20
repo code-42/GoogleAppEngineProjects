@@ -23,7 +23,8 @@ public class QuoteTableDownload {
 
 	public static void main(String[] args) throws IOException {
 		
-		getData(args[0]);
+//		getData(ticker);
+		System.out.println("hello from main()");
 	}
 	
 
@@ -54,8 +55,7 @@ public class QuoteTableDownload {
 
         // enter the ticker symbol
         String txtTickerID = "ContentTop_C005_txtTicker";
-        String symbol = ticker;
-        driver.findElement(By.id(txtTickerID)).sendKeys(symbol);
+        driver.findElement(By.id(txtTickerID)).sendKeys(ticker);
         System.out.println("Entered ticker symbol " + ticker.toUpperCase());
 
         // sleep for 1 second
