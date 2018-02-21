@@ -35,6 +35,11 @@ public class CoinMarketCapServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+//	}
+//	
+//	public void getData(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		PrintWriter out = response.getWriter();
 		
 	    response.setContentType("text/html");
@@ -56,7 +61,7 @@ public class CoinMarketCapServlet extends HttpServlet {
             out.println(row.text() + "<br>");
             
         }
-        System.out.println("</body></html>");
+        out.println("</body></html>");
         
 	}
 

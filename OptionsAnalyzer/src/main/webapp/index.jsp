@@ -22,7 +22,7 @@ Local language: <%= request.getLocale() %>
        <tr><td><a href="/CoinMarketCapServlet">CoinMarketCap Scraper</a></td></tr>
     </table>
 
-
+Enter a ticker symbol to download QuoteTable file: 
 
 
 </body>
