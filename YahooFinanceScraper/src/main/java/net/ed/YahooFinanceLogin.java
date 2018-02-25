@@ -124,6 +124,18 @@ public class YahooFinanceLogin extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		// sleep for a few milliseconds then click My Watchlist 
+		try {
+			Thread.sleep(500);
+			String myWatchlistLinkXpath = "//*[@id=\"main\"]/section/section/div[2]/table/tbody/tr/td[1]/a"; // My Watchlist link
+			driver.findElement(By.xpath(myWatchlistLinkXpath)).click();
+			System.out.println("clicked My Watchlist link");
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		// sleep for a few seconds then close chrome browser
 		try {
 			Thread.sleep(7000);
