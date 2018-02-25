@@ -108,6 +108,21 @@ public class YahooFinanceLogin extends HttpServlet {
 			e.printStackTrace();
 		}
 
+		// xpath for the My Portfolio link
+		//*[@id="Nav-0-DesktopNav"]/div/div[3]/div/div[1]/ul/li[2]/a
+		
+		
+		// sleep for a few milliseconds then click My Portfolio
+		try {
+			Thread.sleep(500);
+			String myPortfolioLinkXpath = "//*[@id=\"Nav-0-DesktopNav\"]/div/div[3]/div/div[1]/ul/li[2]/a"; // My Portfolio link
+			driver.findElement(By.xpath(myPortfolioLinkXpath)).click();
+			System.out.println("clicked My Portfolio link");
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		// sleep for a few seconds then close chrome browser
 		try {
