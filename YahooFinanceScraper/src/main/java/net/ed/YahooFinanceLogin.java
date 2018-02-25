@@ -48,7 +48,9 @@ public class YahooFinanceLogin extends HttpServlet {
 
 		String url = "https://finance.yahoo.com";
 		driver.get(url);
-
+		
+		response.sendRedirect("/");
+		
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
@@ -60,6 +62,19 @@ public class YahooFinanceLogin extends HttpServlet {
 		driver.findElement(By.xpath(signInButtonXpath)).click();
 		System.out.println("clicked Sign In button");
 		
+		driver.findElement(By.name("username")).sendKeys("edev42@yahoo.com"); // fill in the blanks
+		driver.findElement(By.name("signin")).click();
+		System.out.println("clicked Next button");
+		
+		try {
+			Thread.sleep(7000);
+			driver.quit();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+
 
 	}
 
