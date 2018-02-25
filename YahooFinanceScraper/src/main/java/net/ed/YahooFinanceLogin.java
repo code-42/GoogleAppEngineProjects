@@ -145,8 +145,13 @@ public class YahooFinanceLogin extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		// need to get my watchlist https://finance.yahoo.com/portfolio/p_0/view/v1
+//        Document doc = Jsoup.connect("https://finance.yahoo.com/portfolio/p_0/view/v1").get();  
+//        String title = doc.title();  
+//        System.out.println("title is: " + title);
 
-
+		boolean yesOk = JsoupScraper.getSoup();
+		System.out.println(yesOk);
 	}
 
 	/**
