@@ -49,6 +49,17 @@ public class YahooFinanceLogin extends HttpServlet {
 		String url = "https://finance.yahoo.com";
 		driver.get(url);
 
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		String signInButtonXpath = "//*[@id='uh-signedin']"; // //*[@id="uh-signedin"]
+		driver.findElement(By.xpath(signInButtonXpath)).click();
+		System.out.println("clicked Sign In button");
+		
 
 	}
 
