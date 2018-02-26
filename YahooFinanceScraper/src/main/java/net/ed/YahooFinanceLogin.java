@@ -75,17 +75,6 @@ public class YahooFinanceLogin extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		// find the login button
-//		try {
-//			Thread.sleep(500);
-//			String signInButtonXpath = "//*[@id='uh-signedin']"; // //*[@id="uh-signedin"]
-//			driver.findElement(By.xpath(signInButtonXpath)).click();
-//			System.out.println("clicked Sign In button");
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-		
 		// sleep for a few milliseconds then click it
 		try {
 			Thread.sleep(500);
@@ -97,7 +86,6 @@ public class YahooFinanceLogin extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 
 		// sleep for a few milliseconds then click next button
 		try {
@@ -132,8 +120,6 @@ public class YahooFinanceLogin extends HttpServlet {
 			ex.printStackTrace();
 		} 
 
-		// xpath for the Finance link
-		//*[@id="Nav-0-DesktopNav"]/div/div[3]/div/div[1]/ul/li[2]/a
 		// sleep for a few milliseconds then click Finance
 		try {
 			Thread.sleep(500);
@@ -170,23 +156,24 @@ public class YahooFinanceLogin extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		// this works in dev as of Mon 2-26 @ 12:37am
-		// sleep for a few milliseconds then get currentMarketValue
+		// get certain elements on Portfolio page
 		try {
+			// sleep for a few milliseconds 
 			Thread.sleep(500);
+			
+			// Current Market Value element
 			String currentMarketValueXpath = "//p[@data-test='currentMarketValue']";
 			String currentMarketValue = driver.findElement(By.xpath(currentMarketValueXpath)).getText();
 			System.out.println(currentMarketValue);
 			Thread.sleep(500);
 			
-			//*[@id="main"]/section/header/div[1]/div[2]/p[2]/span
+			// Day Gain element
 			String dayGainXpath = "//span[@class=\"_2JT1U _3Bucv _2ZN-S\"]";
 			String dayGain = driver.findElement(By.xpath(dayGainXpath)).getText();
 			System.out.println("Today's Gain: " + dayGain);
 			Thread.sleep(500);
-//			
-//			
-////			String totalGainXpath = "//p[@class=\"_2HvXW\"] and .//span[@class=\"_2JT1U _3Bucv _2ZN-S\"]";
+
+			// Total Gain element
 			String totalGainXpath = "//span[@class='_2JT1U _3Bucv _2ZN-S']/ancestor::p[contains(@class,'_2HvXW')]";
 			String totalGain = driver.findElement(By.xpath(totalGainXpath)).getText();
 			System.out.println(totalGain);
@@ -196,35 +183,25 @@ public class YahooFinanceLogin extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-
 		
-		// need to get my watchlist https://finance.yahoo.com/portfolio/p_0/view/v1
-//        Document doc = Jsoup.connect("https://finance.yahoo.com/portfolio/p_0/view/v1").get();  
-//        String title = doc.title();  
-//        System.out.println("title is: " + title);
-
-//		boolean yesOk = JsoupScraper.getPortfolio();
-//		System.out.println(JsoupScraper.getPortfolio());
+		// get data from My Watchlist page
+ 		try {
+			// xpath for data-test="contentTable"
+			//*[@id="main"]/section/section[2]/div[2]/table
+			String contentTableXpath = "//*[@id=\"main\"]/section/section[2]/div[2]/table";
+			String contentTable = driver.findElement(By.xpath(contentTableXpath)).getText();
+			System.out.println(contentTable);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		// sleep for a few seconds then close chrome browser
-//		try {
-//			Thread.sleep(500);
-//			String url = "https://finance.yahoo.com/portfolio/p_0/view/v1";
-//			final Document doc = Jsoup.connect(url).get(); 
-//			Elements body = doc.select("body");
-//			String sp500 = body.select("span[class=_2K4ek _3Bucv]").text();
-//			System.out.println("159. " + sp500);
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		System.out.println("This is PRODUCTION");
 		
-		
-		// sleep for a few seconds then close chrome browser
+		// sleep for a few seconds then close Chrome browser
 		try {
 			Thread.sleep(7000);
-			driver.quit();
+//			driver.quit();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
