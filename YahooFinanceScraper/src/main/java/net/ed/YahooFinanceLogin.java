@@ -159,16 +159,16 @@ public class YahooFinanceLogin extends HttpServlet {
 		}
 		
 		// sleep for a few milliseconds then click My Watchlist 
-//		try {
-//			Thread.sleep(500);
-//			String myWatchlistLinkXpath = "//*[@id=\"main\"]/section/section/div[2]/table/tbody/tr/td[1]/a"; // My Watchlist link
-//			driver.findElement(By.xpath(myWatchlistLinkXpath)).click();
-//			System.out.println("clicked My Watchlist link");
-//			Thread.sleep(500);
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		try {
+			Thread.sleep(500);
+			String myWatchlistLinkXpath = "//*[@id=\"main\"]/section/section/div[2]/table/tbody/tr/td[1]/a"; // My Watchlist link
+			driver.findElement(By.xpath(myWatchlistLinkXpath)).click();
+			System.out.println("clicked My Watchlist link");
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 /*		this works in dev as of Mon 2-26 @ 12:37am
 		// sleep for a few milliseconds then get currentMarketValue
