@@ -170,7 +170,7 @@ public class YahooFinanceLogin extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-/*		this works in dev as of Mon 2-26 @ 12:37am
+		// this works in dev as of Mon 2-26 @ 12:37am
 		// sleep for a few milliseconds then get currentMarketValue
 		try {
 			Thread.sleep(500);
@@ -178,25 +178,25 @@ public class YahooFinanceLogin extends HttpServlet {
 			String currentMarketValue = driver.findElement(By.xpath(currentMarketValueXpath)).getText();
 			System.out.println(currentMarketValue);
 			Thread.sleep(500);
-			
-			//*[@id="main"]/section/header/div[1]/div[2]/p[2]/span
-			String dayGainXpath = "//span[@class=\"_2JT1U _3Bucv _2ZN-S\"]";
-			String dayGain = driver.findElement(By.xpath(dayGainXpath)).getText();
-			System.out.println("Today's Gain: " + dayGain);
-			Thread.sleep(500);
-			
-			
-//			String totalGainXpath = "//p[@class=\"_2HvXW\"] and .//span[@class=\"_2JT1U _3Bucv _2ZN-S\"]";
-			String totalGainXpath = "//span[@class='_2JT1U _3Bucv _2ZN-S']/ancestor::p[contains(@class,'_2HvXW')]";
-			String totalGain = driver.findElement(By.xpath(totalGainXpath)).getText();
-			System.out.println(totalGain);
-			Thread.sleep(500);
+//			
+//			//*[@id="main"]/section/header/div[1]/div[2]/p[2]/span
+//			String dayGainXpath = "//span[@class=\"_2JT1U _3Bucv _2ZN-S\"]";
+//			String dayGain = driver.findElement(By.xpath(dayGainXpath)).getText();
+//			System.out.println("Today's Gain: " + dayGain);
+//			Thread.sleep(500);
+//			
+//			
+////			String totalGainXpath = "//p[@class=\"_2HvXW\"] and .//span[@class=\"_2JT1U _3Bucv _2ZN-S\"]";
+//			String totalGainXpath = "//span[@class='_2JT1U _3Bucv _2ZN-S']/ancestor::p[contains(@class,'_2HvXW')]";
+//			String totalGain = driver.findElement(By.xpath(totalGainXpath)).getText();
+//			System.out.println(totalGain);
+//			Thread.sleep(500);
 			
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-*/
+
 
 		
 		// need to get my watchlist https://finance.yahoo.com/portfolio/p_0/view/v1
@@ -224,7 +224,7 @@ public class YahooFinanceLogin extends HttpServlet {
 		// sleep for a few seconds then close chrome browser
 		try {
 			Thread.sleep(7000);
-//			driver.quit();
+			driver.quit();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
