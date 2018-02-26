@@ -1,6 +1,8 @@
 package net.ed;
 
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import javax.servlet.ServletException;
@@ -11,7 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -52,7 +57,7 @@ public class YahooFinanceLogin extends HttpServlet {
 		// sleep for a few milliseconds then open YahooFinance homepage
 		try {
 			Thread.sleep(500);
-			String url = "https://finance.yahoo.com";
+			String url = "https://login.yahoo.com";
 			driver.get(url);
 			Thread.sleep(500);
 		} catch (InterruptedException e) {
@@ -71,15 +76,15 @@ public class YahooFinanceLogin extends HttpServlet {
 		}
 		
 		// find the login button
-		try {
-			Thread.sleep(500);
-			String signInButtonXpath = "//*[@id='uh-signedin']"; // //*[@id="uh-signedin"]
-			driver.findElement(By.xpath(signInButtonXpath)).click();
-			System.out.println("clicked Sign In button");
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			Thread.sleep(500);
+//			String signInButtonXpath = "//*[@id='uh-signedin']"; // //*[@id="uh-signedin"]
+//			driver.findElement(By.xpath(signInButtonXpath)).click();
+//			System.out.println("clicked Sign In button");
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
 		// sleep for a few milliseconds then click it
 		try {
@@ -107,10 +112,38 @@ public class YahooFinanceLogin extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		// xpath for the My Portfolio link
-		//*[@id="Nav-0-DesktopNav"]/div/div[3]/div/div[1]/ul/li[2]/a
 		
+		// get cookies
+		try {
+			Set<Cookie> cookies = driver.manage().getCookies();
+			System.out.println("67. Cookies Size: " + cookies.size());
+	
+			Iterator<Cookie> it = cookies.iterator();
+			while(it.hasNext()) {
+				Cookie cookie = it.next();
+				System.out.println(cookie.getName() + ";\n" +
+									cookie.getPath() + ";\n" +
+									cookie.getDomain() + ";\n" +
+									cookie.getValue() + ";\n" +
+									cookie.getExpiry());
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} 
+
+		// xpath for the Finance link
+		//*[@id="Nav-0-DesktopNav"]/div/div[3]/div/div[1]/ul/li[2]/a
+		// sleep for a few milliseconds then click Finance
+		try {
+			Thread.sleep(500);
+			String financeLinkXpath = "//a[text()='Finance']"; // Finance link
+			driver.findElement(By.xpath(financeLinkXpath)).click();
+			System.out.println("clicked Financelink");
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		// sleep for a few milliseconds then click My Portfolio
 		try {
@@ -125,33 +158,49 @@ public class YahooFinanceLogin extends HttpServlet {
 		}
 		
 		// sleep for a few milliseconds then click My Watchlist 
-		try {
-			Thread.sleep(500);
-			String myWatchlistLinkXpath = "//*[@id=\"main\"]/section/section/div[2]/table/tbody/tr/td[1]/a"; // My Watchlist link
-			driver.findElement(By.xpath(myWatchlistLinkXpath)).click();
-			System.out.println("clicked My Watchlist link");
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			Thread.sleep(500);
+//			String myWatchlistLinkXpath = "//*[@id=\"main\"]/section/section/div[2]/table/tbody/tr/td[1]/a"; // My Watchlist link
+//			driver.findElement(By.xpath(myWatchlistLinkXpath)).click();
+//			System.out.println("clicked My Watchlist link");
+//			Thread.sleep(500);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
-		// sleep for a few seconds then close chrome browser
-		try {
-			Thread.sleep(7000);
-			driver.quit();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
 		
 		// need to get my watchlist https://finance.yahoo.com/portfolio/p_0/view/v1
 //        Document doc = Jsoup.connect("https://finance.yahoo.com/portfolio/p_0/view/v1").get();  
 //        String title = doc.title();  
 //        System.out.println("title is: " + title);
 
-		boolean yesOk = JsoupScraper.getSoup();
-		System.out.println(yesOk);
+//		boolean yesOk = JsoupScraper.getPortfolio();
+//		System.out.println(JsoupScraper.getPortfolio());
+		
+		// sleep for a few seconds then close chrome browser
+//		try {
+//			Thread.sleep(500);
+//			String url = "https://finance.yahoo.com/portfolio/p_0/view/v1";
+//			final Document doc = Jsoup.connect(url).get(); 
+//			Elements body = doc.select("body");
+//			String sp500 = body.select("span[class=_2K4ek _3Bucv]").text();
+//			System.out.println("159. " + sp500);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		
+		
+		// sleep for a few seconds then close chrome browser
+		try {
+			Thread.sleep(7000);
+//			driver.quit();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**
