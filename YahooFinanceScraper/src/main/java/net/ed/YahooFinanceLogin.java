@@ -178,12 +178,12 @@ public class YahooFinanceLogin extends HttpServlet {
 			String currentMarketValue = driver.findElement(By.xpath(currentMarketValueXpath)).getText();
 			System.out.println(currentMarketValue);
 			Thread.sleep(500);
-//			
-//			//*[@id="main"]/section/header/div[1]/div[2]/p[2]/span
-//			String dayGainXpath = "//span[@class=\"_2JT1U _3Bucv _2ZN-S\"]";
-//			String dayGain = driver.findElement(By.xpath(dayGainXpath)).getText();
-//			System.out.println("Today's Gain: " + dayGain);
-//			Thread.sleep(500);
+			
+			//*[@id="main"]/section/header/div[1]/div[2]/p[2]/span
+			String dayGainXpath = "//span[@class=\"_2JT1U _3Bucv _2ZN-S\"]";
+			String dayGain = driver.findElement(By.xpath(dayGainXpath)).getText();
+			System.out.println("Today's Gain: " + dayGain);
+			Thread.sleep(500);
 //			
 //			
 ////			String totalGainXpath = "//p[@class=\"_2HvXW\"] and .//span[@class=\"_2JT1U _3Bucv _2ZN-S\"]";
