@@ -187,10 +187,10 @@ public class YahooFinanceLogin extends HttpServlet {
 //			
 //			
 ////			String totalGainXpath = "//p[@class=\"_2HvXW\"] and .//span[@class=\"_2JT1U _3Bucv _2ZN-S\"]";
-//			String totalGainXpath = "//span[@class='_2JT1U _3Bucv _2ZN-S']/ancestor::p[contains(@class,'_2HvXW')]";
-//			String totalGain = driver.findElement(By.xpath(totalGainXpath)).getText();
-//			System.out.println(totalGain);
-//			Thread.sleep(500);
+			String totalGainXpath = "//span[@class='_2JT1U _3Bucv _2ZN-S']/ancestor::p[contains(@class,'_2HvXW')]";
+			String totalGain = driver.findElement(By.xpath(totalGainXpath)).getText();
+			System.out.println(totalGain);
+			Thread.sleep(500);
 			
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
