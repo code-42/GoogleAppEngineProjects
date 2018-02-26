@@ -122,10 +122,11 @@ public class YahooFinanceLogin extends HttpServlet {
 			while(it.hasNext()) {
 				Cookie cookie = it.next();
 				System.out.println(cookie.getName() + ";\n" +
-									cookie.getPath() + ";\n" +
-									cookie.getDomain() + ";\n" +
-									cookie.getValue() + ";\n" +
-									cookie.getExpiry());
+						cookie.getExpiry() + ";\n" +
+						cookie.getPath() + ";\n" +
+						cookie.getDomain() + ";\n" +
+						cookie.getValue() + ";\n" 
+						);
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -146,16 +147,16 @@ public class YahooFinanceLogin extends HttpServlet {
 		}
 		
 		// sleep for a few milliseconds then click My Portfolio
-//		try {
-//			Thread.sleep(500);
-//			String myPortfolioLinkXpath = "//*[@id=\"Nav-0-DesktopNav\"]/div/div[3]/div/div[1]/ul/li[2]/a"; // My Portfolio link
-//			driver.findElement(By.xpath(myPortfolioLinkXpath)).click();
-//			System.out.println("clicked My Portfolio link");
-//			Thread.sleep(500);
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		try {
+			Thread.sleep(500);
+			String myPortfolioLinkXpath = "//*[@id=\"Nav-0-DesktopNav\"]/div/div[3]/div/div[1]/ul/li[2]/a"; // My Portfolio link
+			driver.findElement(By.xpath(myPortfolioLinkXpath)).click();
+			System.out.println("clicked My Portfolio link");
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		// sleep for a few milliseconds then click My Watchlist 
 //		try {
@@ -169,6 +170,33 @@ public class YahooFinanceLogin extends HttpServlet {
 //			e.printStackTrace();
 //		}
 		
+/*		this works in dev as of Mon 2-26 @ 12:37am
+		// sleep for a few milliseconds then get currentMarketValue
+		try {
+			Thread.sleep(500);
+			String currentMarketValueXpath = "//p[@data-test='currentMarketValue']";
+			String currentMarketValue = driver.findElement(By.xpath(currentMarketValueXpath)).getText();
+			System.out.println(currentMarketValue);
+			Thread.sleep(500);
+			
+			//*[@id="main"]/section/header/div[1]/div[2]/p[2]/span
+			String dayGainXpath = "//span[@class=\"_2JT1U _3Bucv _2ZN-S\"]";
+			String dayGain = driver.findElement(By.xpath(dayGainXpath)).getText();
+			System.out.println("Today's Gain: " + dayGain);
+			Thread.sleep(500);
+			
+			
+//			String totalGainXpath = "//p[@class=\"_2HvXW\"] and .//span[@class=\"_2JT1U _3Bucv _2ZN-S\"]";
+			String totalGainXpath = "//span[@class='_2JT1U _3Bucv _2ZN-S']/ancestor::p[contains(@class,'_2HvXW')]";
+			String totalGain = driver.findElement(By.xpath(totalGainXpath)).getText();
+			System.out.println(totalGain);
+			Thread.sleep(500);
+			
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+*/
 
 		
 		// need to get my watchlist https://finance.yahoo.com/portfolio/p_0/view/v1
