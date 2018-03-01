@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6733" started-at="2018-03-01T17:11:15Z" finished-at="2018-03-01T17:11:22Z">
+  <suite name="Default suite" duration-ms="5662" started-at="2018-03-01T17:20:24Z" finished-at="2018-03-01T17:20:30Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6733" started-at="2018-03-01T17:11:15Z" finished-at="2018-03-01T17:11:22Z">
+    <test name="Default test" duration-ms="5662" started-at="2018-03-01T17:20:24Z" finished-at="2018-03-01T17:20:30Z">
       <class name="net.ed.LoginServletTest">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:net.ed.LoginServletTest@757942a1]" name="launchBrowser" is-config="true" duration-ms="3966" started-at="2018-03-01T17:11:15Z" finished-at="2018-03-01T17:11:19Z">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:net.ed.LoginServletTest@757942a1]" name="launchBrowser" is-config="true" duration-ms="2800" started-at="2018-03-01T17:20:24Z" finished-at="2018-03-01T17:20:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="doGetTest()[pri:0, instance:net.ed.LoginServletTest@757942a1]" name="doGetTest" duration-ms="2629" started-at="2018-03-01T17:11:19Z" finished-at="2018-03-01T17:11:22Z">
+        <test-method status="PASS" signature="doGetTest()[pri:0, instance:net.ed.LoginServletTest@757942a1]" name="doGetTest" duration-ms="2728" started-at="2018-03-01T17:20:27Z" finished-at="2018-03-01T17:20:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- doGetTest -->
-        <test-method status="PASS" signature="terminateBrowser()[pri:0, instance:net.ed.LoginServletTest@757942a1]" name="terminateBrowser" is-config="true" duration-ms="109" started-at="2018-03-01T17:11:22Z" finished-at="2018-03-01T17:11:22Z">
+        <test-method status="PASS" signature="terminateBrowser()[pri:0, instance:net.ed.LoginServletTest@757942a1]" name="terminateBrowser" is-config="true" duration-ms="109" started-at="2018-03-01T17:20:30Z" finished-at="2018-03-01T17:20:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- terminateBrowser -->
