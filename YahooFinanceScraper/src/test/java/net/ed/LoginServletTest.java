@@ -67,7 +67,6 @@ public class LoginServletTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 	
 	@Test(priority = 3)
@@ -89,12 +88,10 @@ public class LoginServletTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 	
 	@AfterTest
 	public void terminateBrowser() {
-//		driver.close();
 		// sleep for a few seconds then close chrome browser
 		try {
 			Thread.sleep(4000);
