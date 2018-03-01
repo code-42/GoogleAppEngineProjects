@@ -7,7 +7,7 @@
         <methods>
           <include name="launchBrowser"/>
           <include name="terminateBrowser"/>
-          <include name="enterUserPasswordTest"/>
+          <include name="enterUserName_Test"/>
         </methods>
       </class> <!-- net.ed.LoginServletTest -->
     </classes>
