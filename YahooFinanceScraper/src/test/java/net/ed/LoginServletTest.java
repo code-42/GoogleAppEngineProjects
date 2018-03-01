@@ -4,6 +4,7 @@ import static org.testng.Assert.assertEquals;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -34,13 +35,33 @@ public class LoginServletTest {
 	@Test
 	public void doGetTest() {
 		
-		String url = "https://login.yahoo.com";
-		driver.get(url);
-
-		String expected = "Yahoo - login";
-		String actual = driver.getTitle();
-		assertEquals(expected, actual);
+		try {
+			Thread.sleep(500);
+			String url = "https://login.yahoo.com";
+			driver.get(url);
+			Thread.sleep(500);
+			String expected = "Yahoo - login";
+			String actual = driver.getTitle();
+			assertEquals(expected, actual);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		// sleep for a few milliseconds then click it
+//		try {
+//			Thread.sleep(500);
+//			driver.findElement(By.name("username")).sendKeys("edev42@yahoo.com"); // fill in the blanks
+//			Thread.sleep(500);
+//			driver.findElement(By.name("signin")).click();
+//			System.out.println("clicked Next button");
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	}
+	
+
 	
 	@AfterTest
 	public void terminateBrowser() {
