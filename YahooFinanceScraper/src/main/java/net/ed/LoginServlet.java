@@ -47,7 +47,10 @@ public class LoginServlet extends HttpServlet {
 		// dynamic wait
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
 		
+		String url = "https://login.yahoo.com";
+		driver.get(url);
 
 	}
 
