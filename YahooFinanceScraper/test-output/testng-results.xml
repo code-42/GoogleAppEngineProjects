@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
 <<<<<<< HEAD
   <suite name="Default suite" duration-ms="34261" started-at="2018-03-01T17:44:31Z" finished-at="2018-03-01T17:45:06Z">
     <groups>
@@ -68,29 +69,29 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
         <test-method status="PASS" signature="terminateBrowser()[pri:0, instance:net.ed.LoginServlet_Test@757942a1]" name="terminateBrowser" is-config="true" duration-ms="4120" started-at="2018-03-01T17:45:02Z" finished-at="2018-03-01T17:45:06Z">
 =======
   <suite name="Default suite" duration-ms="19210" started-at="2018-03-01T18:26:18Z" finished-at="2018-03-01T18:26:37Z">
+=======
+  <suite name="Default suite" duration-ms="83005" started-at="2018-03-01T20:58:52Z" finished-at="2018-03-01T21:00:15Z">
+>>>>>>> dev
     <groups>
     </groups>
-    <test name="Default test" duration-ms="19210" started-at="2018-03-01T18:26:18Z" finished-at="2018-03-01T18:26:37Z">
-      <class name="net.ed.LoginServletTest">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:net.ed.LoginServletTest@757942a1]" name="launchBrowser" is-config="true" duration-ms="3661" started-at="2018-03-01T18:26:18Z" finished-at="2018-03-01T18:26:21Z">
+    <test name="Default test" duration-ms="83005" started-at="2018-03-01T20:58:52Z" finished-at="2018-03-01T21:00:15Z">
+      <class name="net.ed.YahooFinanceScraper_Test">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:net.ed.YahooFinanceScraper_Test@757942a1]" name="launchBrowser" is-config="true" duration-ms="3008" started-at="2018-03-01T20:58:52Z" finished-at="2018-03-01T20:58:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="getURL_Test()[pri:1, instance:net.ed.LoginServletTest@757942a1]" name="getURL_Test" duration-ms="2633" started-at="2018-03-01T18:26:21Z" finished-at="2018-03-01T18:26:24Z">
+        <test-method status="PASS" signature="getURL_Test()[pri:1, instance:net.ed.YahooFinanceScraper_Test@757942a1]" name="getURL_Test" duration-ms="2523" started-at="2018-03-01T20:58:55Z" finished-at="2018-03-01T20:58:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getURL_Test -->
-        <test-method status="PASS" signature="enterUserName_Test()[pri:2, instance:net.ed.LoginServletTest@757942a1]" name="enterUserName_Test" duration-ms="1317" started-at="2018-03-01T18:26:24Z" finished-at="2018-03-01T18:26:25Z">
+        <test-method status="PASS" signature="getCookies_Test()[pri:2, instance:net.ed.YahooFinanceScraper_Test@757942a1]" name="getCookies_Test" duration-ms="65452" started-at="2018-03-01T20:58:58Z" finished-at="2018-03-01T21:00:03Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- enterUserName_Test -->
-        <test-method status="PASS" signature="enterPassword_Test()[pri:3, instance:net.ed.LoginServletTest@757942a1]" name="enterPassword_Test" duration-ms="7333" started-at="2018-03-01T18:26:25Z" finished-at="2018-03-01T18:26:33Z">
+        </test-method> <!-- getCookies_Test -->
+        <test-method status="PASS" signature="scrapeMyTotals_Test()[pri:4, instance:net.ed.YahooFinanceScraper_Test@757942a1]" name="scrapeMyTotals_Test" duration-ms="2934" started-at="2018-03-01T21:00:03Z" finished-at="2018-03-01T21:00:06Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- enterPassword_Test -->
-        <test-method status="PASS" signature="getCookies_Test()[pri:4, instance:net.ed.LoginServletTest@757942a1]" name="getCookies_Test" duration-ms="55" started-at="2018-03-01T18:26:33Z" finished-at="2018-03-01T18:26:33Z">
-          <reporter-output>
-          </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- getCookies_Test -->
         <test-method status="PASS" signature="terminateBrowser()[pri:0, instance:net.ed.LoginServletTest@757942a1]" name="terminateBrowser" is-config="true" duration-ms="4170" started-at="2018-03-01T18:26:33Z" finished-at="2018-03-01T18:26:37Z">
 >>>>>>> dev
@@ -98,6 +99,14 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </reporter-output>
         </test-method> <!-- terminateBrowser -->
       </class> <!-- net.ed.LoginServlet_Test -->
+=======
+        </test-method> <!-- scrapeMyTotals_Test -->
+        <test-method status="PASS" signature="terminateBrowser()[pri:0, instance:net.ed.YahooFinanceScraper_Test@757942a1]" name="terminateBrowser" is-config="true" duration-ms="9002" started-at="2018-03-01T21:00:06Z" finished-at="2018-03-01T21:00:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- terminateBrowser -->
+      </class> <!-- net.ed.YahooFinanceScraper_Test -->
+>>>>>>> dev
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

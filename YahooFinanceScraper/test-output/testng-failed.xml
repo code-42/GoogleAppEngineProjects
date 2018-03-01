@@ -3,18 +3,28 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="net.ed.LoginServlet_Test">
+=======
+      <class name="net.ed.YahooFinanceScraper_Test">
+>>>>>>> dev
         <methods>
+          <include name="scrapeMyTotals_Test"/>
           <include name="launchBrowser"/>
 <<<<<<< HEAD
           <include name="enterUserPasswordTest"/>
           <include name="terminateBrowser"/>
 =======
           <include name="terminateBrowser"/>
+<<<<<<< HEAD
           <include name="enterUserName_Test"/>
 >>>>>>> dev
         </methods>
       </class> <!-- net.ed.LoginServlet_Test -->
+=======
+        </methods>
+      </class> <!-- net.ed.YahooFinanceScraper_Test -->
+>>>>>>> dev
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
