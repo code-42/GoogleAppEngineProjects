@@ -35,6 +35,7 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		// add support for chrome driver
 		String key = "webdriver.chrome.driver";
 		String valuex = "/Users/melocal/Applications/lib/chromedriver";
 		System.setProperty(key, valuex);
@@ -47,58 +48,9 @@ public class LoginServlet extends HttpServlet {
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
-		
-		// login to Yahoo
-		try {
-			Thread.sleep(500);
-			String url = "https://login.yahoo.com";
-			driver.get(url);
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		// sleep for a few milliseconds then click it
-		try {
-			Thread.sleep(500);
-			driver.findElement(By.name("username")).sendKeys("edev42@yahoo.com"); // fill in the blanks
-			Thread.sleep(500);
-			driver.findElement(By.name("signin")).click();
-			System.out.println("clicked Next button");
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		// sleep for a few milliseconds then click next button
-		try {
-			Thread.sleep(500);
-			// the password is incorrect
-			driver.findElement(By.name("password")).sendKeys("incorrect42");
-			Thread.sleep(500);
-			driver.findElement(By.name("verifyPassword")).click();
-			System.out.println("clicked Verify Password button");
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
 	}
 
-	public static void exitServlet() {
-		System.out.println("This LoginServlet.exitServlet()");
-		
-		// sleep for a few seconds then close chrome browser
-		try {
-			Thread.sleep(4000);
-			driver.quit();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
