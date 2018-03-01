@@ -6,8 +6,13 @@
       <class name="net.ed.LoginServlet_Test">
         <methods>
           <include name="launchBrowser"/>
+<<<<<<< HEAD
           <include name="enterUserPasswordTest"/>
           <include name="terminateBrowser"/>
+=======
+          <include name="terminateBrowser"/>
+          <include name="enterUserName_Test"/>
+>>>>>>> dev
         </methods>
       </class> <!-- net.ed.LoginServlet_Test -->
     </classes>
