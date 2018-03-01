@@ -9,8 +9,8 @@
       <class name="net.ed.YahooFinanceScraper_Test">
 >>>>>>> dev
         <methods>
-          <include name="scrapeMyTotals_Test"/>
           <include name="launchBrowser"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
           <include name="enterUserPasswordTest"/>
           <include name="terminateBrowser"/>
@@ -22,6 +22,11 @@
         </methods>
       </class> <!-- net.ed.LoginServlet_Test -->
 =======
+=======
+          <include name="getPortfolioURL_Test"/>
+          <include name="terminateBrowser"/>
+          <include name="scrapeMyData_Test"/>
+>>>>>>> dev
         </methods>
       </class> <!-- net.ed.YahooFinanceScraper_Test -->
 >>>>>>> dev

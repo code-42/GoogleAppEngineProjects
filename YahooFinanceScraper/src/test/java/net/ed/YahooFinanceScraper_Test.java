@@ -109,7 +109,7 @@ public class YahooFinanceScraper_Test {
 	}
 	
 	
-//	@Test(priority = 3)
+	@Test(priority = 3)
 	public void getPortfolioURL_Test() {
 		try {
 			Thread.sleep(500);
@@ -158,6 +158,22 @@ public class YahooFinanceScraper_Test {
 		}
 	}
 
+	@Test(priority = 5)
+	public void scrapeMyData_Test() {
+		try {
+			Thread.sleep(500);
+			// now that i got my cookies, open to my account page
+			String contentTableXpath = "//*[@id=\"main\"]/section/section[2]/div[2]/table";
+			String contentTable = driver.findElement(By.xpath(contentTableXpath)).getText();
+			System.out.println(contentTable);
+			String expected = "Yahoo Finance - Business Finance, Stock Market, Quotes, News";
+			String actual = driver.getTitle();
+			assertEquals(expected, actual);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 	@AfterTest
 	public void terminateBrowser() {
