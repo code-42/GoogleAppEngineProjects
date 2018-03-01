@@ -15,7 +15,7 @@ Local language: <%= request.getLocale() %>
 
     <table>
       <tr><td colspan="2" style="font-weight:bold;">Available Servlets:</td></tr>
-      <tr><td><a href="YahooFinanceLogin">Yahoo Finance Login</a></td></tr>
+      <tr><td><a href="LoginServlet">Yahoo Finance Login</a></td></tr>
 
     </table>
 
