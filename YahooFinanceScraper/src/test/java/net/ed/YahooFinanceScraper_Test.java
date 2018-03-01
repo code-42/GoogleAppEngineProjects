@@ -101,8 +101,24 @@ public class YahooFinanceScraper_Test {
         		ex.printStackTrace();			
         }
 		
-		// now that i got my cookies, open to my account page
-		driver.get("https://finance.yahoo.com/portfolio/p_0/view/v1");
+
+	}
+	
+	@Test(priority = 3)
+	public void getPortfolioURL_Test() {
+		try {
+			Thread.sleep(500);
+			// now that i got my cookies, open to my account page
+			String url = "https://finance.yahoo.com/portfolio/p_0/view/v1";
+			driver.get(url);
+			Thread.sleep(500);
+			String expected = "Yahoo Finance - Business Finance, Stock Market, Quotes, News";
+			String actual = driver.getTitle();
+			assertEquals(expected, actual);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
   
 	
