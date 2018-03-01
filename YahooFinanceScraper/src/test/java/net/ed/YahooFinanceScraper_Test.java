@@ -12,6 +12,7 @@ import java.util.Date;
 import java.util.StringTokenizer;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -93,18 +94,22 @@ public class YahooFinanceScraper_Test {
 			        System.out.println("145. LoginServlet Selenium cookies...");
 		            System.out.println(ck.getName()+";"+ck.getValue()+";"+ck.getDomain()+";"+ck.getPath()+";"+ck.getExpiry()+";"+ck.isSecure());
 		            Thread.sleep(5000);
-		            fileReader.close();
-		            Buffreader.close();
+		            
+//		            fileReader.close();
+//		            Buffreader.close();
 		        	}		
 		    }
         } catch(Exception ex){					
         		ex.printStackTrace();			
         }
 		
-
+		// now go to My Portfolio page after i got my cookies
+        driver.get("https://finance.yahoo.com/portfolio/p_0/view/v1");
+        
 	}
 	
-	@Test(priority = 3)
+	
+//	@Test(priority = 3)
 	public void getPortfolioURL_Test() {
 		try {
 			Thread.sleep(500);
@@ -121,13 +126,45 @@ public class YahooFinanceScraper_Test {
 		}
 	}
   
+
+	@Test(priority = 4)
+	public void scrapeMyTotals_Test() {
+		// get certain elements on MyPortfolio page
+		try {
+			// sleep for a few milliseconds 
+			Thread.sleep(500);
+			System.out.println("inside Portfolio Page and scrapeMyTotals()");
+			
+			// Current Market Value element
+			String currentMarketValueXpath = "//p[@data-test='currentMarketValue']";
+			String currentMarketValue = driver.findElement(By.xpath(currentMarketValueXpath)).getText();
+			System.out.println(currentMarketValue);
+			Thread.sleep(500);
+			
+			// Day Gain element
+			String dayGainXpath = "//p[contains(@class,'_2ETlv')]";
+			String dayGain = driver.findElement(By.xpath(dayGainXpath)).getText();
+			System.out.println("Today's Gain: " + dayGain);
+			Thread.sleep(500);
+	
+			// Total Gain element
+			String totalGainXpath = "//p[contains(@class,'_2HvXW')]";
+			String totalGain = driver.findElement(By.xpath(totalGainXpath)).getText();
+			System.out.println(totalGain);
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 	
 	@AfterTest
 	public void terminateBrowser() {
 		// sleep for a few seconds then close chrome browser
 		try {
 			Thread.sleep(9000);
-			driver.quit();
+//			driver.quit();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

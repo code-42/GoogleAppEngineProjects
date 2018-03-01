@@ -5,8 +5,8 @@
     <classes>
       <class name="net.ed.YahooFinanceScraper_Test">
         <methods>
+          <include name="scrapeMyTotals_Test"/>
           <include name="launchBrowser"/>
-          <include name="getPortfolioURL_Test"/>
           <include name="terminateBrowser"/>
         </methods>
       </class> <!-- net.ed.YahooFinanceScraper_Test -->
