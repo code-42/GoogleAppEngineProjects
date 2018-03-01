@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class LoginServletTest {
@@ -14,7 +15,7 @@ public class LoginServletTest {
 	
 	@Test
 	public void doGetTest() {
-	
+		
 		// add support for chrome driver
 		String key = "webdriver.chrome.driver";
 		String valuex = "/Users/melocal/Applications/lib/chromedriver";
