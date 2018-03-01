@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -13,9 +14,9 @@ public class LoginServletTest {
 	
 	static WebDriver driver;
 	
-	@Test
-	public void doGetTest() {
-		
+	@BeforeTest
+	public void launchBrowser() {
+
 		// add support for chrome driver
 		String key = "webdriver.chrome.driver";
 		String valuex = "/Users/melocal/Applications/lib/chromedriver";
@@ -31,10 +32,18 @@ public class LoginServletTest {
 		
 		String url = "https://login.yahoo.com";
 		driver.get(url);
-		
+	}
+	
+	@Test
+	public void doGetTest() {
+
 		String expected = "Yahoo - login";
 		String actual = driver.getTitle();
 		assertEquals(expected, actual);
+	}
+	
+	@AfterTest
+	public void terminateBrowser() {
 		driver.close();
 	}
   
