@@ -28,13 +28,14 @@ public class LoginServletTest {
 		// dynamic wait
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		
-		String url = "https://login.yahoo.com";
-		driver.get(url);
+
 	}
 	
 	@Test
 	public void doGetTest() {
+		
+		String url = "https://login.yahoo.com";
+		driver.get(url);
 
 		String expected = "Yahoo - login";
 		String actual = driver.getTitle();
