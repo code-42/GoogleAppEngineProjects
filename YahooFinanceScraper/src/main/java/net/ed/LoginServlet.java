@@ -44,6 +44,16 @@ public class LoginServlet extends HttpServlet {
 		enterPassword();
 		terminateBrowser();
 		
+		// sleep for a few milliseconds then redirect to homepage 
+		try {
+			Thread.sleep(500);
+			// send user back to where he came from
+			response.sendRedirect("/");
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	
 		// launch browser
@@ -79,9 +89,9 @@ public class LoginServlet extends HttpServlet {
 		public void enterUserName() {
 			// sleep for a few milliseconds then click it
 			try {
-				Thread.sleep(5000);
+				Thread.sleep(500);
 				driver.findElement(By.name("username")).sendKeys("edev42@yahoo.com"); // fill in the blanks
-				Thread.sleep(5000);
+				Thread.sleep(500);
 				driver.findElement(By.name("signin")).click();
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
@@ -93,16 +103,52 @@ public class LoginServlet extends HttpServlet {
 		public void enterPassword() {
 			// sleep for a few milliseconds then click it
 			try {
-				Thread.sleep(5000);
+				Thread.sleep(500);
 				// the password is incorrect
 				driver.findElement(By.name("password")).sendKeys("incorrect42");
 				Thread.sleep(500);
 				driver.findElement(By.name("verifyPassword")).click();
-				Thread.sleep(5000);
+				Thread.sleep(500);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		}
+		
+		// get cookies
+		public void getCookies() {
+			// get cookies
+			// tutorial https://www.guru99.com/handling-cookies-selenium-webdriver.html
+	        // create file named Cookies to store Login Information		
+	        File file = new File("Cookies.data");
+		    try		
+		    {	  
+		        // Delete old file if exists
+				file.delete();		
+		        file.createNewFile();			
+		        FileWriter fileWrite = new FileWriter(file);							
+		        BufferedWriter Bwrite = new BufferedWriter(fileWrite);							
+		        	
+		        // loop for getting the cookie information 		
+		        for(Cookie ck : driver.manage().getCookies())							
+		        {			
+		            Bwrite.write((ck.getName()+";"+ck.getValue()+";"+ck.getDomain()+";"+ck.getPath()+";"+ck.getExpiry()+";"+ck.isSecure()));																									
+		            Bwrite.newLine();
+		            System.out.println("175. LoginServlet Selenium cookies...");
+		            System.out.println(ck.getName()+";"+ck.getValue()+";"+ck.getDomain()+";"+ck.getPath()+";"+ck.getExpiry()+";"+ck.isSecure());
+		        }			
+		        Bwrite.close();			
+		        fileWrite.close();	
+//		        response.sendRedirect("/YahooFinanceScraper");
+//		        exitApp();
+				String expected = "Yahoo";
+				String actual = driver.getTitle();
+				assertEquals(expected, actual);
+		    }
+		    catch(Exception ex)					
+		    {		
+		        ex.printStackTrace();			
+		    }
 		}
 		
 		// now close the browser
