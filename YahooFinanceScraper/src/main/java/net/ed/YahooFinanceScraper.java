@@ -53,7 +53,8 @@ public class YahooFinanceScraper extends HttpServlet {
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		launchBrowser();
-		
+		getCookies();
+		getMyPortfolioPage();
 		terminateBrowser();
 
 	}
@@ -123,7 +124,21 @@ public class YahooFinanceScraper extends HttpServlet {
         }
 	}
 	
+	// go to My Portfolio page
+	public void getMyPortfolioPage() {
+		try {
+			Thread.sleep(500);
+			// now that i got my cookies, open to my account page
+			String url = "https://finance.yahoo.com/portfolio/p_0/view/v1";
+			driver.get(url);
+			Thread.sleep(500);
+	        System.out.println("140. opened My Portfolio page");
 
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 	// now close the browser
 	public void terminateBrowser() {
