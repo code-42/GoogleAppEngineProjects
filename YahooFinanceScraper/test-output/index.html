@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Default_suite">
-              <span class="suite-name border-failed">Default suite</span>
+              <span class="suite-name border-passed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -94,6 +94,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <span class="method-stats">3 methods, 1 failed,   2 passed</span>
 =======
                     <span class="method-stats">5 methods, 2 failed,   3 passed</span>
@@ -130,6 +131,9 @@
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
 >>>>>>> dev
+=======
+                    <span class="method-stats">5 methods,   5 passed</span>
+>>>>>>> dev
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -155,10 +159,18 @@
                         <img width="3%" src="passed.png"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="net.ed.LoginServlet_Test" hash-for-method="getURLTest">getURLTest</a> <!-- method navigator-link -->
 =======
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="net.ed.LoginServletTest" hash-for-method="enterUserName_Test">enterUserName_Test</a> <!-- method navigator-link -->
 =======
+=======
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="net.ed.YahooFinanceScraper_Test" hash-for-method="getPortfolioURL_Test">getPortfolioURL_Test</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+>>>>>>> dev
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="net.ed.YahooFinanceScraper_Test" hash-for-method="getURL_Test">getURL_Test</a> <!-- method navigator-link -->
 >>>>>>> dev
                       </span>
@@ -166,14 +178,21 @@
                       <span>
                         <img width="3%" src="passed.png"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="net.ed.LoginServletTest" hash-for-method="getCookies_Test">getCookies_Test</a> <!-- method navigator-link -->
+=======
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="net.ed.YahooFinanceScraper_Test" hash-for-method="scrapeMyData_Test">scrapeMyData_Test</a> <!-- method navigator-link -->
+>>>>>>> dev
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
+<<<<<<< HEAD
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="net.ed.LoginServletTest" hash-for-method="getURL_Test">getURL_Test</a> <!-- method navigator-link -->
 >>>>>>> dev
 =======
+=======
+>>>>>>> dev
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="net.ed.YahooFinanceScraper_Test" hash-for-method="scrapeMyTotals_Test">scrapeMyTotals_Test</a> <!-- method navigator-link -->
 >>>>>>> dev
                       </span>
@@ -190,98 +209,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">net.ed.YahooFinanceScraper_Test</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="getPortfolioURL_Test">
-                  </a> <!-- getPortfolioURL_Test -->
-                  <span class="method-name">getPortfolioURL_Test</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [My Watchlist - Yahoo Finance Portfolios] but found [Yahoo Finance - Business Finance, Stock Market, Quotes, News]
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-	at org.testng.Assert.assertEquals(Assert.java:118)
-	at org.testng.Assert.assertEquals(Assert.java:453)
-	at org.testng.Assert.assertEquals(Assert.java:463)
-	at net.ed.YahooFinanceScraper_Test.getPortfolioURL_Test(YahooFinanceScraper_Test.java:122)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="scrapeMyData_Test">
-                  </a> <!-- scrapeMyData_Test -->
-                  <span class="method-name">scrapeMyData_Test</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [My Watchlist - Yahoo Finance Portfolios] but found [Yahoo Finance - Business Finance, Stock Market, Quotes, News]
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-	at org.testng.Assert.assertEquals(Assert.java:118)
-	at org.testng.Assert.assertEquals(Assert.java:453)
-	at org.testng.Assert.assertEquals(Assert.java:463)
-	at net.ed.YahooFinanceScraper_Test.scrapeMyData_Test(YahooFinanceScraper_Test.java:171)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-failed -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
 <<<<<<< HEAD
@@ -374,9 +301,23 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="getPortfolioURL_Test">
+                  </a> <!-- getPortfolioURL_Test -->
+                  <span class="method-name">getPortfolioURL_Test</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="getURL_Test">
                   </a> <!-- getURL_Test -->
                   <span class="method-name">getURL_Test</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="scrapeMyData_Test">
+                  </a> <!-- scrapeMyData_Test -->
+                  <span class="method-name">scrapeMyData_Test</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -394,6 +335,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <span class="header-content">/private/var/folders/6d/7thnq8ks46j562sjrm6jfx0r0000gp/T/testng-eclipse-1085485174/testng-customsuite.xml</span>
 =======
             <span class="header-content">/private/var/folders/6d/7thnq8ks46j562sjrm6jfx0r0000gp/T/testng-eclipse-518899997/testng-customsuite.xml</span>
@@ -403,6 +345,9 @@
 >>>>>>> dev
 =======
             <span class="header-content">/private/var/folders/6d/7thnq8ks46j562sjrm6jfx0r0000gp/T/testng-eclipse-145555793/testng-customsuite.xml</span>
+>>>>>>> dev
+=======
+            <span class="header-content">/private/var/folders/6d/7thnq8ks46j562sjrm6jfx0r0000gp/T/testng-eclipse--613558556/testng-customsuite.xml</span>
 >>>>>>> dev
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
@@ -479,16 +424,21 @@ data.setCell(0, 3, 7333);
 data.setCell(0, 1, 'getCookies_Test')
 data.setCell(0, 2, 'net.ed.YahooFinanceScraper_Test')
 <<<<<<< HEAD
+<<<<<<< HEAD
 data.setCell(0, 3, 65452);
 >>>>>>> dev
 =======
 data.setCell(0, 3, 75856);
 >>>>>>> dev
+=======
+data.setCell(0, 3, 65278);
+>>>>>>> dev
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'getURL_Test')
+data.setCell(1, 1, 'scrapeMyTotals_Test')
 data.setCell(1, 2, 'net.ed.YahooFinanceScraper_Test')
-data.setCell(1, 3, 11304);
+data.setCell(1, 3, 5758);
 data.setCell(2, 0, 2)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 data.setCell(2, 1, 'enterUserName_Test')
@@ -506,16 +456,23 @@ data.setCell(2, 3, 2523);
 >>>>>>> dev
 =======
 data.setCell(2, 1, 'scrapeMyTotals_Test')
+=======
+data.setCell(2, 1, 'getURL_Test')
+>>>>>>> dev
 data.setCell(2, 2, 'net.ed.YahooFinanceScraper_Test')
-data.setCell(2, 3, 2210);
+data.setCell(2, 3, 2774);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'getPortfolioURL_Test')
 data.setCell(3, 2, 'net.ed.YahooFinanceScraper_Test')
-data.setCell(3, 3, 2103);
+data.setCell(3, 3, 1469);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'scrapeMyData_Test')
 data.setCell(4, 2, 'net.ed.YahooFinanceScraper_Test')
+<<<<<<< HEAD
 data.setCell(4, 3, 879);
+>>>>>>> dev
+=======
+data.setCell(4, 3, 640);
 >>>>>>> dev
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
@@ -584,30 +541,27 @@ return data;
                 <span class="method-start">30136 ms</span>
 =======
                 <span class="method-name">getURL_Test</span>
-                <span class="method-start">2127 ms</span>
+                <span class="method-start">2092 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">getCookies_Test</span>
-                <span class="method-start">13436 ms</span>
+                <span class="method-start">4872 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">getPortfolioURL_Test</span>
-                <span class="method-start">89294 ms</span>
+                <span class="method-start">70151 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">scrapeMyTotals_Test</span>
-                <span class="method-start">91403 ms</span>
+                <span class="method-start">71621 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">scrapeMyData_Test</span>
-                <span class="method-start">93615 ms</span>
+                <span class="method-start">77382 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">terminateBrowser</span>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 <span class="method-start">15037 ms</span>
@@ -617,6 +571,9 @@ return data;
 >>>>>>> dev
 =======
                 <span class="method-start">94500 ms</span>
+>>>>>>> dev
+=======
+                <span class="method-start">78023 ms</span>
 >>>>>>> dev
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->

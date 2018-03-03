@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import static org.testng.Assert.assertEquals;
+//import static org.testng.Assert.assertEquals;
 
 import java.io.BufferedWriter;		
 import java.io.File;		
@@ -42,17 +42,21 @@ public class LoginServlet extends HttpServlet {
 		getURL();
 		enterUserName();
 		enterPassword();
+		getCookies();
+		redirectToScraper(response);
+		
+
 		terminateBrowser();
 		
 		// sleep for a few milliseconds then redirect to homepage 
-		try {
-			Thread.sleep(500);
-			// send user back to where he came from
-			response.sendRedirect("/");
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			Thread.sleep(500);
+//			// send user back to where he came from
+//			response.sendRedirect("/");
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
 	}
 	
@@ -141,14 +145,25 @@ public class LoginServlet extends HttpServlet {
 		        fileWrite.close();	
 //		        response.sendRedirect("/YahooFinanceScraper");
 //		        exitApp();
-				String expected = "Yahoo";
-				String actual = driver.getTitle();
-				assertEquals(expected, actual);
 		    }
 		    catch(Exception ex)					
 		    {		
 		        ex.printStackTrace();			
 		    }
+		}
+		
+		public void redirectToScraper(HttpServletResponse response) throws ServletException, IOException {
+//			// sleep for a few milliseconds then redirect to homepage 
+			try {
+				Thread.sleep(500);
+				// send user back to start page
+				response.sendRedirect("/");
+				// then open new browser window for scraping
+				response.sendRedirect("/YahooFinanceScraper");
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}		
 		}
 		
 		// now close the browser
