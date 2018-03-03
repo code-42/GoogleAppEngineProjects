@@ -55,6 +55,7 @@ public class YahooFinanceScraper extends HttpServlet {
 		launchBrowser();
 		getCookies();
 		getMyPortfolioPage();
+		scrapeMyTotals();
 		terminateBrowser();
 
 	}
@@ -134,6 +135,37 @@ public class YahooFinanceScraper extends HttpServlet {
 			Thread.sleep(500);
 	        System.out.println("140. opened My Portfolio page");
 
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	// scrape my totals
+	public void scrapeMyTotals() {
+		// get certain elements on MyPortfolio page
+		try {
+			// sleep for a few milliseconds 
+			Thread.sleep(500);
+			System.out.println("inside Portfolio Page and scrapeMyTotals()");
+			
+			// Current Market Value element
+			String currentMarketValueXpath = "//p[@data-test='currentMarketValue']";
+			String currentMarketValue = driver.findElement(By.xpath(currentMarketValueXpath)).getText();
+			System.out.println(currentMarketValue);
+			Thread.sleep(500);
+			
+			// Day Gain element
+			String dayGainXpath = "//p[contains(@class,'_2ETlv')]";
+			String dayGain = driver.findElement(By.xpath(dayGainXpath)).getText();
+			System.out.println("Today's Gain: " + dayGain);
+			Thread.sleep(500);
+	
+			// Total Gain element
+			String totalGainXpath = "//p[contains(@class,'_2HvXW')]";
+			String totalGain = driver.findElement(By.xpath(totalGainXpath)).getText();
+			System.out.println(totalGain);
+			Thread.sleep(500);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
