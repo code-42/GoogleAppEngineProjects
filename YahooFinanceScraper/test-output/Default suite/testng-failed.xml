@@ -8,7 +8,6 @@
           <include name="launchBrowser"/>
           <include name="getPortfolioURL_Test"/>
           <include name="terminateBrowser"/>
-          <include name="scrapeMyData_Test"/>
         </methods>
       </class> <!-- net.ed.YahooFinanceScraper_Test -->
     </classes>
