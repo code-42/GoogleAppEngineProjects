@@ -72,6 +72,7 @@ public class YahooFinanceScraper extends HttpServlet {
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
+		
 	}
 	
 	
