@@ -71,10 +71,57 @@ public class YahooFinanceScraper extends HttpServlet {
 		// dynamic wait
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-		
+	
 	}
 	
+	// get cookies
+	public void getCookies() {
+
+		// tutorial https://www.guru99.com/handling-cookies-selenium-webdriver.html
+		try{
+			Thread.sleep(500);
+//			driver.get("https://finance.yahoo.com/portfolio/p_0/view/v1");
+			// first get the domain
+			driver.get("https://finance.yahoo.com");
+			Thread.sleep(500);
+	        File file = new File("Cookies.data");							
+	        FileReader fileReader = new FileReader(file);							
+	        BufferedReader Buffreader = new BufferedReader(fileReader);							
+	        String strline;			
+	        while((strline=Buffreader.readLine())!=null){									
+		        StringTokenizer token = new StringTokenizer(strline,";");									
+		        while(token.hasMoreTokens()){					
+			        String name = token.nextToken();					
+			        String value = token.nextToken();					
+			        String domain = token.nextToken();					
+			        String path = token.nextToken();					
+			        Date expiry = null;					
+			        		
+			        String val;			
+			        if(!(val=token.nextToken()).equals("null"))
+						{		
+				        	expiry = new Date(val);					
+				        }		
+			        Boolean isSecure = new Boolean(token.nextToken()).								
+			        booleanValue();		
+			        Cookie ck = new Cookie(name,value,domain,path,expiry,isSecure);			
+			        System.out.println(ck);
+			        Thread.sleep(500);
+			        driver.manage().addCookie(ck); // This will add the stored cookie to your current session					
+
+			        Thread.sleep(500);
+			        System.out.println("114. YahooFinanceScraper Selenium cookies...");
+		            System.out.println(ck.getName()+";"+ck.getValue()+";"+ck.getDomain()+";"+ck.getPath()+";"+ck.getExpiry()+";"+ck.isSecure());
+		            Thread.sleep(5000);
+		            
+//		            fileReader.close();
+//		            Buffreader.close();
+		        	}		
+		    }
+        } catch(Exception ex){					
+        		ex.printStackTrace();			
+        }
+	}
 	
 
 	
