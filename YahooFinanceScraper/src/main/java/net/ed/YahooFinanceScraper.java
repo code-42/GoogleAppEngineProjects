@@ -56,6 +56,7 @@ public class YahooFinanceScraper extends HttpServlet {
 		getCookies();
 		getMyPortfolioPage();
 		scrapeMyTotals();
+		scrapeMyData();
 		terminateBrowser();
 
 	}
@@ -166,6 +167,20 @@ public class YahooFinanceScraper extends HttpServlet {
 			String totalGain = driver.findElement(By.xpath(totalGainXpath)).getText();
 			System.out.println(totalGain);
 			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	// scrape my data
+	public void scrapeMyData() {
+		try {
+			Thread.sleep(500);
+			// now that i got my cookies, open to my account page
+			String contentTableXpath = "//*[@id=\"main\"]/section/section[2]/div[2]/table";
+			String contentTable = driver.findElement(By.xpath(contentTableXpath)).getText();
+			System.out.println(contentTable);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
