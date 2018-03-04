@@ -110,7 +110,7 @@ public class YahooFinanceScraper_Test {
 	
 	
 	@Test(priority = 3)
-	public void getPortfolioURL_Test() {
+	public void getMyPortfolioPage_Test() {
 		try {
 			Thread.sleep(500);
 			// now that i got my cookies, open to my account page
