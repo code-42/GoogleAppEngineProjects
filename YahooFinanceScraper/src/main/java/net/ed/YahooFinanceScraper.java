@@ -58,6 +58,12 @@ public class YahooFinanceScraper extends HttpServlet {
 		scrapeMyTotals();
 		scrapeMyData();
 		terminateBrowser();
+//		try {
+//			accessDatabase();
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 
 	}
 	
@@ -181,6 +187,18 @@ public class YahooFinanceScraper extends HttpServlet {
 			String contentTableXpath = "//*[@id=\"main\"]/section/section[2]/div[2]/table";
 			String contentTable = driver.findElement(By.xpath(contentTableXpath)).getText();
 			System.out.println(contentTable);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	// to access a method in another class, first make a new one and .get it
+	public void accessDatabase() throws Exception {
+		try {
+			Thread.sleep(500);
+			DataAccess dao = new DataAccess();
+			dao.readData();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
