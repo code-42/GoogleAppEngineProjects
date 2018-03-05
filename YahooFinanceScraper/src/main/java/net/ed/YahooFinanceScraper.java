@@ -58,12 +58,13 @@ public class YahooFinanceScraper extends HttpServlet {
 		getMyPortfolioPage();
 		scrapeMyTotals();
 		scrapeMyData();
-		try {
-			connectToDB();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		response.sendRedirect("/");
+//		try {
+//			connectToDB();
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		terminateBrowser();
 
 	}
@@ -120,7 +121,7 @@ public class YahooFinanceScraper extends HttpServlet {
 			        driver.manage().addCookie(ck); // This will add the stored cookie to your current session					
 
 			        Thread.sleep(500);
-			        System.out.println("114. YahooFinanceScraper Selenium cookies...");
+//			        System.out.println("114. YahooFinanceScraper Selenium cookies...");
 		            System.out.println(ck.getName()+";"+ck.getValue()+";"+ck.getDomain()+";"+ck.getPath()+";"+ck.getExpiry()+";"+ck.isSecure());
 		            Thread.sleep(5000);
 		            
@@ -184,10 +185,53 @@ public class YahooFinanceScraper extends HttpServlet {
 	public void scrapeMyData() {
 		try {
 			Thread.sleep(500);
+//			// now that i got my cookies, open to my account page
+//			String contentTableXpath = "//*[@id=\"main\"]/section/section[2]/div[2]/table";
+//			String contentTable = driver.findElement(By.xpath(contentTableXpath)).getText();
+//			System.out.println(contentTable);
+			System.out.println("inside YahooFinanceScraper.scrapeMyData()");
+			Thread.sleep(5000);
 			// now that i got my cookies, open to my account page
 			String contentTableXpath = "//*[@id=\"main\"]/section/section[2]/div[2]/table";
 			String contentTable = driver.findElement(By.xpath(contentTableXpath)).getText();
-			System.out.println(contentTable);
+//			System.out.println(contentTable);
+			System.out.println("218. fin with printing contentTable");
+			System.out.println("219. printing contentTableRowXpath next...");
+			
+			String contentTableRowXpath = "//*[@id='main']/section/section[2]/div[2]/table/tbody/tr";
+//			String contentTableColXpath = "//*[@id='main']/section/section[2]/div[2]/table/tbody/tr/td"; // 130
+			String contentTableColXpath = "//tbody/tr[2]/td";
+			
+			int numRows = driver.findElements(By.xpath(contentTableRowXpath)).size();
+			System.out.println("211. numRows == " + numRows);
+			
+			int numCols = driver.findElements(By.xpath(contentTableColXpath)).size();
+			System.out.println("214. numCols == " + numCols);
+			System.out.println("216. looping through table...");
+			
+			String[] td = new String[numCols];
+			
+			String tdData = "";
+
+			for (int row=1; row <= numRows; row++) {
+				for (int col = 1; col <= numCols; col++){
+					
+					tdData = driver.findElement(By.xpath("//tbody/tr[" + row + "]/td[" + col + "]")).getText();
+
+					// remove %, M and B from certain columns
+					if(col == 4 || col == 7 || col == 9 || col == 10 || col == 13) {
+						String pattern = "[%MB](?!\\d+.\\d+)"; 
+						tdData = tdData.replaceAll(pattern,"");
+						td[col-1] = tdData;
+						System.out.print(td[col-1] + "\t");
+					} else {
+						td[col-1] = tdData;
+						System.out.print(td[col-1] + "\t");
+					}
+				}
+				System.out.println();
+			}
+
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
