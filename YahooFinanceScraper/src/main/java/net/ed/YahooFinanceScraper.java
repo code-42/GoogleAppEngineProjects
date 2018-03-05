@@ -58,6 +58,17 @@ public class YahooFinanceScraper extends HttpServlet {
 		scrapeMyTotals();
 		scrapeMyData();
 		terminateBrowser();
+		
+		// sleep for a few milliseconds then redirect to homepage 
+		try {
+			Thread.sleep(500);
+			// send user back to where he came from
+			response.sendRedirect("/");
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 //		try {
 //			accessDatabase();
 //		} catch (Exception e) {
