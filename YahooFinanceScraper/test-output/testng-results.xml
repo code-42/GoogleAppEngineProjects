@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="432" started-at="2018-03-05T04:14:37Z" finished-at="2018-03-05T04:14:37Z">
+  <suite name="Default suite" duration-ms="388" started-at="2018-03-05T13:39:41Z" finished-at="2018-03-05T13:39:42Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="432" started-at="2018-03-05T04:14:37Z" finished-at="2018-03-05T04:14:37Z">
+    <test name="Default test" duration-ms="388" started-at="2018-03-05T13:39:41Z" finished-at="2018-03-05T13:39:42Z">
       <class name="net.ed.DataAccess_Test">
-        <test-method status="PASS" signature="connectToDB_Test()[pri:1, instance:net.ed.DataAccess_Test@ed9d034]" name="connectToDB_Test" duration-ms="383" started-at="2018-03-05T04:14:37Z" finished-at="2018-03-05T04:14:37Z">
+        <test-method status="PASS" signature="connectToDB()[pri:0, instance:net.ed.DataAccess_Test@6a1aab78]" name="connectToDB" is-config="true" duration-ms="317" started-at="2018-03-05T13:39:41Z" finished-at="2018-03-05T13:39:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- connectToDB -->
+        <test-method status="PASS" signature="connectToDB_Test()[pri:1, instance:net.ed.DataAccess_Test@6a1aab78]" name="connectToDB_Test" duration-ms="7" started-at="2018-03-05T13:39:42Z" finished-at="2018-03-05T13:39:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- connectToDB_Test -->
-        <test-method status="PASS" signature="readData_Test()[pri:2, instance:net.ed.DataAccess_Test@ed9d034]" name="readData_Test" duration-ms="19" started-at="2018-03-05T04:14:37Z" finished-at="2018-03-05T04:14:37Z">
+        <test-method status="PASS" signature="readData_Test()[pri:2, instance:net.ed.DataAccess_Test@6a1aab78]" name="readData_Test" duration-ms="7" started-at="2018-03-05T13:39:42Z" finished-at="2018-03-05T13:39:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- readData_Test -->
+        <test-method status="PASS" signature="addNewStock()[pri:3, instance:net.ed.DataAccess_Test@6a1aab78]" name="addNewStock" duration-ms="20" started-at="2018-03-05T13:39:42Z" finished-at="2018-03-05T13:39:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addNewStock -->
       </class> <!-- net.ed.DataAccess_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
