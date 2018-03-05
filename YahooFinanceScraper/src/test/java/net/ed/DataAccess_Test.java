@@ -21,7 +21,7 @@ public class DataAccess_Test {
 			
 			// setup connection with DB YahooScraperMySQLConnection
 			String connectionString = "jdbc:mysql://localhost:3306/YahooScraper";
-			connect = DriverManager.getConnection(connectionString, "root", "M@@dm!n!");
+			connect = DriverManager.getConnection(connectionString, "yahoo", "yahoo");
 			System.out.print("25. connect.toString() == ");
 			System.out.println(connect.toString());
 		} catch (Exception e) {
@@ -36,7 +36,7 @@ public class DataAccess_Test {
 			
 			// setup connection with DB YahooScraperMySQLConnection
 			String connectionString = "jdbc:mysql://localhost:3306/YahooScraper";
-			connect = DriverManager.getConnection(connectionString, "root", "M@@dm!n!");
+			connect = DriverManager.getConnection(connectionString, "yahoo", "yahoo");
 			statement = connect.createStatement();
 			resultSet = statement
 					.executeQuery("select * from YahooScraper.myWatchlist where symbol like 'INTC'");
