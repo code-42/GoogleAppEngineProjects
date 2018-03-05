@@ -3,13 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="net.ed.YahooFinanceScraper_Test">
+      <class name="net.ed.DataAccess_Test">
         <methods>
-          <include name="launchBrowser"/>
-          <include name="getPortfolioURL_Test"/>
-          <include name="terminateBrowser"/>
+          <include name="connectToDB"/>
         </methods>
-      </class> <!-- net.ed.YahooFinanceScraper_Test -->
+      </class> <!-- net.ed.DataAccess_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

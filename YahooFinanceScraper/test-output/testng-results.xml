@@ -1,41 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="86517" started-at="2018-03-05T03:48:06Z" finished-at="2018-03-05T03:49:33Z">
+  <suite name="Default suite" duration-ms="432" started-at="2018-03-05T04:14:37Z" finished-at="2018-03-05T04:14:37Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="86517" started-at="2018-03-05T03:48:06Z" finished-at="2018-03-05T03:49:33Z">
-      <class name="net.ed.YahooFinanceScraper_Test">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:net.ed.YahooFinanceScraper_Test@66d1af89]" name="launchBrowser" is-config="true" duration-ms="2318" started-at="2018-03-05T03:48:06Z" finished-at="2018-03-05T03:48:09Z">
+    <test name="Default test" duration-ms="432" started-at="2018-03-05T04:14:37Z" finished-at="2018-03-05T04:14:37Z">
+      <class name="net.ed.DataAccess_Test">
+        <test-method status="PASS" signature="connectToDB_Test()[pri:1, instance:net.ed.DataAccess_Test@ed9d034]" name="connectToDB_Test" duration-ms="383" started-at="2018-03-05T04:14:37Z" finished-at="2018-03-05T04:14:37Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="getURL_Test()[pri:1, instance:net.ed.YahooFinanceScraper_Test@66d1af89]" name="getURL_Test" duration-ms="2914" started-at="2018-03-05T03:48:09Z" finished-at="2018-03-05T03:48:12Z">
+        </test-method> <!-- connectToDB_Test -->
+        <test-method status="PASS" signature="readData_Test()[pri:2, instance:net.ed.DataAccess_Test@ed9d034]" name="readData_Test" duration-ms="19" started-at="2018-03-05T04:14:37Z" finished-at="2018-03-05T04:14:37Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getURL_Test -->
-        <test-method status="PASS" signature="getCookies_Test()[pri:2, instance:net.ed.YahooFinanceScraper_Test@66d1af89]" name="getCookies_Test" duration-ms="65773" started-at="2018-03-05T03:48:12Z" finished-at="2018-03-05T03:49:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getCookies_Test -->
-        <test-method status="PASS" signature="getPortfolioURL_Test()[pri:3, instance:net.ed.YahooFinanceScraper_Test@66d1af89]" name="getPortfolioURL_Test" duration-ms="3510" started-at="2018-03-05T03:49:17Z" finished-at="2018-03-05T03:49:21Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getPortfolioURL_Test -->
-        <test-method status="PASS" signature="scrapeMyTotals_Test()[pri:4, instance:net.ed.YahooFinanceScraper_Test@66d1af89]" name="scrapeMyTotals_Test" duration-ms="2182" started-at="2018-03-05T03:49:21Z" finished-at="2018-03-05T03:49:23Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- scrapeMyTotals_Test -->
-        <test-method status="PASS" signature="scrapeMyData_Test()[pri:5, instance:net.ed.YahooFinanceScraper_Test@66d1af89]" name="scrapeMyData_Test" duration-ms="649" started-at="2018-03-05T03:49:23Z" finished-at="2018-03-05T03:49:24Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- scrapeMyData_Test -->
-        <test-method status="PASS" signature="terminateBrowser()[pri:0, instance:net.ed.YahooFinanceScraper_Test@66d1af89]" name="terminateBrowser" is-config="true" duration-ms="9113" started-at="2018-03-05T03:49:24Z" finished-at="2018-03-05T03:49:33Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- terminateBrowser -->
-      </class> <!-- net.ed.YahooFinanceScraper_Test -->
+        </test-method> <!-- readData_Test -->
+      </class> <!-- net.ed.DataAccess_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

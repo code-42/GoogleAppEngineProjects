@@ -186,18 +186,7 @@ public class YahooFinanceScraper extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-	
-	public void accessDB() throws Exception {
-		try {
-			Thread.sleep(500);
-			DataAccess_Test dao = new DataAccess_Test();
-			dao.connectToDB();
-		
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+
 	
 	// now close the browser
 	public void terminateBrowser() {
