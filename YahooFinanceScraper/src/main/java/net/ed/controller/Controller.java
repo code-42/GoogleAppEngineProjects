@@ -1,4 +1,4 @@
-package net.ed;
+package net.ed.controller;
 
 import net.ed.model.DataAccess;
 import java.io.IOException;

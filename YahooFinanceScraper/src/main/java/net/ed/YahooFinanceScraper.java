@@ -248,14 +248,11 @@ public class YahooFinanceScraper extends HttpServlet {
 //						System.out.print(td[col-1] + "\t");
 					} else {
 						td[col-1] = tdData;
-//						System.out.print(td[col-1] + "\t");
 					}
-//					addNewStock(td[col-1]);
 					System.out.print(td[col-1] + "\t");
 				}
 				System.out.println();
 			}
-
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
