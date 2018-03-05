@@ -190,7 +190,7 @@ public class YahooFinanceScraper extends HttpServlet {
 	public void accessDB() throws Exception {
 		try {
 			Thread.sleep(500);
-			DataAccess dao = new DataAccess();
+			DataAccess_Test dao = new DataAccess_Test();
 			dao.connectToDB();
 		
 		} catch (InterruptedException e) {
