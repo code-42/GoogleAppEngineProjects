@@ -44,7 +44,7 @@ public class DataAccess_Test {
 	public void readData_Test() throws Exception {
 		try {
 //			Class.forName("com.mysql.jdbc.Driver");
-			
+
 			statement = connect.createStatement();
 			resultSet = statement
 					.executeQuery("select * from YahooScraper.myWatchlist where symbol like 'INTC'");
