@@ -1,7 +1,12 @@
 package net.ed;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -27,6 +32,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeTest;
+
+import net.ed.model.DataAccess;
+import net.ed.model.Stock;
+
 import org.openqa.selenium.WebDriver;		
 
 
@@ -37,6 +46,12 @@ import org.openqa.selenium.WebDriver;
 public class YahooFinanceScraper extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	static WebDriver driver;
+
+	Connection connect = null;
+	Statement statement = null;
+	PreparedStatement preparedStatement = null;
+	ResultSet resultSet = null;
+	
 
     /**
      * @see HttpServlet#HttpServlet()
@@ -230,11 +245,13 @@ public class YahooFinanceScraper extends HttpServlet {
 						String pattern = "[%MB](?!\\d+.\\d+)"; 
 						tdData = tdData.replaceAll(pattern,"");
 						td[col-1] = tdData;
-						System.out.print(td[col-1] + "\t");
+//						System.out.print(td[col-1] + "\t");
 					} else {
 						td[col-1] = tdData;
-						System.out.print(td[col-1] + "\t");
+//						System.out.print(td[col-1] + "\t");
 					}
+//					addNewStock(td[col-1]);
+					System.out.print(td[col-1] + "\t");
 				}
 				System.out.println();
 			}
@@ -244,7 +261,7 @@ public class YahooFinanceScraper extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-	
+
 	// now close the browser
 	public void terminateBrowser() {
 		// sleep for a few seconds then close chrome browser

@@ -1,5 +1,6 @@
 package net.ed;
 
+import net.ed.model.DataAccess;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
