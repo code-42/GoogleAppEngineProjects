@@ -9,18 +9,20 @@ public class DataAccess {
 	PreparedStatement preparedStatement = null;
 	ResultSet resultSet = null;
 
-	public void connectToDB() throws Exception {
-		try {
-			Class.forName("net.ed.jdbc.Driver");
-			
-			// setup connection with DB YahooScraperMySQLConnection
-			String connectionString = "jdbc:mysql://localhost:3306/YahooScraper";
-			Connection connect = DriverManager.getConnection(connectionString);
+	public void connectToDB() throws SQLException {
 
-		} catch (Exception e) {
-			throw e;
+		// setup connection with DB YahooScraperMySQLConnection
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			String connectionString = "jdbc:mysql://localhost:3306/YahooScraper?autoReconnect=true&useSSL=false";
+			connect = DriverManager.getConnection(connectionString, "yahoo", "yahoo");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+
 	}
+
 	
 	public void readData() throws Exception {
 		try {

@@ -20,21 +20,21 @@ public class DataAccess_Test {
 		// setup connection with DB YahooScraperMySQLConnection
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
+			String connectionString = "jdbc:mysql://localhost:3306/YahooScraper?autoReconnect=true&useSSL=false";
+			connect = DriverManager.getConnection(connectionString, "yahoo", "yahoo");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		String connectionString = "jdbc:mysql://localhost:3306/YahooScraper?autoReconnect=true&useSSL=false";
-		connect = DriverManager.getConnection(connectionString, "yahoo", "yahoo");
+
 	}
 
 	@Test(priority = 1)
 	public void connectToDB_Test() throws Exception {
 		try {
-//			Class.forName("com.mysql.jdbc.Driver");
-
 			System.out.print("25. connect.toString() == ");
 			System.out.println(connect.toString());
+			
 		} catch (Exception e) {
 			throw e;
 		}
@@ -43,16 +43,16 @@ public class DataAccess_Test {
 	@Test(priority = 2)
 	public void readData_Test() throws Exception {
 		try {
-//			Class.forName("com.mysql.jdbc.Driver");
 
 			statement = connect.createStatement();
 			resultSet = statement
-					.executeQuery("select * from YahooScraper.myWatchlist where symbol like 'INTC'");
+					.executeQuery("select * from YahooScraper.myWatchlist where symbol like 'AMZN'");
 			while (resultSet.next()) {
 				int id = resultSet.getInt("id");
 				String symbol = resultSet.getString("symbol");
+				Double lastPrice = resultSet.getDouble("lastPrice");
 
-				System.out.println(String.format("id: %d symbol: %5s", id, symbol));
+				System.out.println(String.format("id: %d symbol: %5s lastPrice: %.2f", id, symbol, lastPrice));
 			}
 		} catch (Exception e) {
 			throw e;
@@ -60,7 +60,7 @@ public class DataAccess_Test {
 	}
 	
 	@Test(priority = 3)
-	public void addNewStock() throws Exception {
+	public void addNewStock_Test() throws Exception {
 
 		try{
 //			Class.forName("com.mysql.jdbc.Driver");
