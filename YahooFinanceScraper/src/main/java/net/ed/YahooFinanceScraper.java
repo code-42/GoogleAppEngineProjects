@@ -255,27 +255,6 @@ public class YahooFinanceScraper extends HttpServlet {
 		}
 	}
 	
-<<<<<<< HEAD
-	// to access a method in another class, first make a new one and .get it
-	public void accessDatabase() throws Exception {
-		try {
-			Thread.sleep(500);
-			DataAccess dao = new DataAccess();
-			dao.readData();
-		} catch (InterruptedException e) {
-=======
-	public void connectToDB() throws Exception {
-		try {
-			DataAccess dao = new DataAccess();
-			dao.readData();
-		} catch (Exception e) {
->>>>>>> dev
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
-	
 	// now close the browser
 	public void terminateBrowser() {
 		// sleep for a few seconds then close chrome browser
