@@ -37,7 +37,7 @@ target/
 .settings/
 .classpath
 .project
-/test-output
+*test-output*
 
 # NetBeans specific
 nbproject/private/
