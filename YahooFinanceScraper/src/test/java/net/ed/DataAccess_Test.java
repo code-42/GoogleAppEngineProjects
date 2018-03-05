@@ -32,7 +32,7 @@ public class DataAccess_Test {
 	public void connectToDB_Test() throws Exception {
 		try {
 //			Class.forName("com.mysql.jdbc.Driver");
-			
+
 			System.out.print("25. connect.toString() == ");
 			System.out.println(connect.toString());
 		} catch (Exception e) {
