@@ -1,21 +1,25 @@
 package net.ed;
 
 import java.sql.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
 
 public class DataAccess {
+	
+	Connection connect = null;
+	Statement statement = null;
+	PreparedStatement preparedStatement = null;
+	ResultSet resultSet = null;
 
-	public void connectToDB() throws Exception {
+	public void connectToDB() throws SQLException {
+
+		// setup connection with DB YahooScraperMySQLConnection
 		try {
-			Class.forName("net.ed.jdbc.Driver");
-			
-			// setup connection with DB YahooScraperMySQLConnection
-			String connectionString = "jdbc:mysql://localhost:3306/YahooScraper";
-			Connection connect = DriverManager.getConnection(connectionString);
-
-		} catch (Exception e) {
-			throw e;
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		String connectionString = "jdbc:mysql://localhost:3306/YahooScraper?autoReconnect=true&useSSL=false";
+		connect = DriverManager.getConnection(connectionString, "yahoo", "yahoo");
 	}
+
 }
