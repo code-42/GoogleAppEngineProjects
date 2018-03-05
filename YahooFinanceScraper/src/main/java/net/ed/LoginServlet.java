@@ -43,9 +43,7 @@ public class LoginServlet extends HttpServlet {
 		enterUserName();
 		enterPassword();
 		getCookies();
-		redirectToScraper(response);
-		
-
+//		redirectToScraper(response);
 		terminateBrowser();
 	}
 	
@@ -132,8 +130,6 @@ public class LoginServlet extends HttpServlet {
 		        }			
 		        Bwrite.close();			
 		        fileWrite.close();	
-//		        response.sendRedirect("/YahooFinanceScraper");
-//		        exitApp();
 		    }
 		    catch(Exception ex)					
 		    {		
