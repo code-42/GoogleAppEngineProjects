@@ -47,17 +47,6 @@ public class LoginServlet extends HttpServlet {
 		
 
 		terminateBrowser();
-		
-		// sleep for a few milliseconds then redirect to homepage 
-//		try {
-//			Thread.sleep(500);
-//			// send user back to where he came from
-//			response.sendRedirect("/");
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-		
 	}
 	
 		// launch browser
@@ -138,7 +127,7 @@ public class LoginServlet extends HttpServlet {
 		        {			
 		            Bwrite.write((ck.getName()+";"+ck.getValue()+";"+ck.getDomain()+";"+ck.getPath()+";"+ck.getExpiry()+";"+ck.isSecure()));																									
 		            Bwrite.newLine();
-		            System.out.println("175. LoginServlet Selenium cookies...");
+//		            System.out.println("175. LoginServlet Selenium cookies...");
 		            System.out.println(ck.getName()+";"+ck.getValue()+";"+ck.getDomain()+";"+ck.getPath()+";"+ck.getExpiry()+";"+ck.isSecure());
 		        }			
 		        Bwrite.close();			

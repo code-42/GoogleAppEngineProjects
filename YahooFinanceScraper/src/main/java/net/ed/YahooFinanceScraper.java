@@ -76,14 +76,6 @@ public class YahooFinanceScraper extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-//		try {
-//			accessDatabase();
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-
 	}
 	
 	public void launchBrowser() {
@@ -114,9 +106,9 @@ public class YahooFinanceScraper extends HttpServlet {
 			Thread.sleep(500);
 	        File file = new File("Cookies.data");							
 	        FileReader fileReader = new FileReader(file);							
-	        BufferedReader Buffreader = new BufferedReader(fileReader);							
+	        BufferedReader buffReader = new BufferedReader(fileReader);							
 	        String strline;			
-	        while((strline=Buffreader.readLine())!=null){									
+	        while((strline=buffReader.readLine())!=null){									
 		        StringTokenizer token = new StringTokenizer(strline,";");									
 		        while(token.hasMoreTokens()){					
 			        String name = token.nextToken();					
@@ -138,14 +130,12 @@ public class YahooFinanceScraper extends HttpServlet {
 			        driver.manage().addCookie(ck); // This will add the stored cookie to your current session					
 
 			        Thread.sleep(500);
-//			        System.out.println("114. YahooFinanceScraper Selenium cookies...");
 		            System.out.println(ck.getName()+";"+ck.getValue()+";"+ck.getDomain()+";"+ck.getPath()+";"+ck.getExpiry()+";"+ck.isSecure());
 		            Thread.sleep(5000);
-		            
-//		            fileReader.close();
-//		            Buffreader.close();
-		        	}		
-		    }
+		        }
+	        }
+            fileReader.close();
+            buffReader.close();
         } catch(Exception ex){					
         		ex.printStackTrace();			
         }
@@ -215,7 +205,7 @@ public class YahooFinanceScraper extends HttpServlet {
 			System.out.println("218. fin with printing contentTable");
 			System.out.println("219. printing contentTableRowXpath next...");
 			
-			String contentTableRowXpath = "//*[@id='main']/section/section[2]/div[2]/table/tbody/tr";
+			String contentTableRowXpath = "//tbody/tr";
 //			String contentTableColXpath = "//*[@id='main']/section/section[2]/div[2]/table/tbody/tr/td"; // 130
 			String contentTableColXpath = "//tbody/tr[2]/td";
 			
