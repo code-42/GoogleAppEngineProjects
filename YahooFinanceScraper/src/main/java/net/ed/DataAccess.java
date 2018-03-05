@@ -14,12 +14,30 @@ public class DataAccess {
 		// setup connection with DB YahooScraperMySQLConnection
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
+			String connectionString = "jdbc:mysql://localhost:3306/YahooScraper?autoReconnect=true&useSSL=false";
+			connect = DriverManager.getConnection(connectionString, "yahoo", "yahoo");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		String connectionString = "jdbc:mysql://localhost:3306/YahooScraper?autoReconnect=true&useSSL=false";
-		connect = DriverManager.getConnection(connectionString, "yahoo", "yahoo");
+
 	}
 
+	public void readData() throws Exception {
+		try {
+//			Class.forName("com.mysql.jdbc.Driver");
+			connectToDB();
+			statement = connect.createStatement();
+			resultSet = statement
+					.executeQuery("select * from YahooScraper.myWatchlist where symbol like 'INTC'");
+			while (resultSet.next()) {
+				int id = resultSet.getInt("id");
+				String symbol = resultSet.getString("symbol");
+
+				System.out.println(String.format("id: %d symbol: %5s", id, symbol));
+			}
+		} catch (Exception e) {
+			throw e;
+		}
+	}
 }

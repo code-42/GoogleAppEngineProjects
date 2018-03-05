@@ -1,6 +1,7 @@
 package net.ed;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -57,6 +58,12 @@ public class YahooFinanceScraper extends HttpServlet {
 		getMyPortfolioPage();
 		scrapeMyTotals();
 		scrapeMyData();
+		try {
+			connectToDB();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		terminateBrowser();
 
 	}
@@ -182,6 +189,16 @@ public class YahooFinanceScraper extends HttpServlet {
 			String contentTable = driver.findElement(By.xpath(contentTableXpath)).getText();
 			System.out.println(contentTable);
 		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void connectToDB() throws Exception {
+		try {
+			DataAccess dao = new DataAccess();
+			dao.readData();
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
