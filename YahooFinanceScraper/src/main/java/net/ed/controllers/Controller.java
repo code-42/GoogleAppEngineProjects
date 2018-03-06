@@ -1,12 +1,13 @@
-package net.ed.controller;
+package net.ed.controllers;
 
-import net.ed.model.DataAccess;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import net.ed.models.DataAccess;
 
 /**
  * Servlet implementation class Controller
@@ -32,9 +33,12 @@ public class Controller extends HttpServlet {
 		try {
 			Thread.sleep(500);
 			// send user to login page
+			System.out.println("35. in controller  - then redirect to /LoginServlet");
 			response.sendRedirect("/LoginServlet");
 			// then open new browser window for scraping
+			System.out.println("35. in controller  - then redirect to /YahooFinanceScraper");
 			response.sendRedirect("/YahooFinanceScraper");
+			System.out.println("35. now back in controller - done with /YahooFinanceScraper");
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

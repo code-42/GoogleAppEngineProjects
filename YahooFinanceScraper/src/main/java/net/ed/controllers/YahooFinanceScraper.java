@@ -1,4 +1,4 @@
-package net.ed;
+package net.ed.controllers;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -33,8 +33,7 @@ import org.openqa.selenium.Cookie;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeTest;
 
-import net.ed.model.DataAccess;
-import net.ed.model.Stock;
+import net.ed.models.*;
 
 import org.openqa.selenium.WebDriver;		
 
@@ -264,6 +263,7 @@ public class YahooFinanceScraper extends HttpServlet {
 		// sleep for a few seconds then close chrome browser
 		try {
 			Thread.sleep(9000);
+			System.out.println("269. now exiting /YahooFinanceScraper");
 			driver.quit();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

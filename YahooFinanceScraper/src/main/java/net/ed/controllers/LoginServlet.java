@@ -1,4 +1,4 @@
-package net.ed;
+package net.ed.controllers;
 
 import java.io.IOException;
 import java.util.Iterator;

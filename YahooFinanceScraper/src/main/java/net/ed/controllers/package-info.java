@@ -5,4 +5,4 @@
  * @author melocal
  *
  */
-package net.ed.model;
+package net.ed.controllers;

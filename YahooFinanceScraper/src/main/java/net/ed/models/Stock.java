@@ -1,4 +1,4 @@
-package net.ed.model;
+package net.ed.models;
 
 public class Stock {
 	
